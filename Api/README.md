@@ -1,0 +1,2 @@
+###Welcome to use MarkDown
+该ces.js为测试request访问数据。可在src下的任何一个组件中通过测试，该操作单独使用可以访问，但与server使用时端口与该gangup项目端口号均为8080则获取不到request的数据

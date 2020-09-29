@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				height: 600px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body style="position: relative;">
+		<div class="zuo"style="background-color: yellow;"></div>
+		<div class="zhong"style="width: 200px;background-color: red;height: 100%;position: absolute;left:50px;top: 0;"></div>
+		<div class="you"style="background-color: blue;"></div>
+	</body>
+</html>
+<script>
+	const obj = {
+		aa(){
+			return {
+				bb(){
+					return'bb'
+				}
+			}
+		}
+	}
+	
+	console.log(obj.aa().bb())
+</script>

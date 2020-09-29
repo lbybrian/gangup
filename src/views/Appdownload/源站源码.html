@@ -1,0 +1,1304 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>点点开黑APP官方下载</title>
+<script src="https://res.tuwan.com/js/device.min.js"></script>
+<script type="text/javascript"> 
+var mobile= device.mobile();
+if(mobile){
+    location.href="https://wx.tuwan.com/events/advertlol";
+}
+</script>
+<meta name="keywords" content="点点开黑,app,下载,陪玩" />
+<meta name="description" content="点点开黑，最真实的陪玩平台，游戏大神、魅力声优在线等你，快来官方下载点点开黑app吧！
+"/>
+<link href="https://res.tuwan.com/templet/teach/index/css/common_index.css" type="text/css" rel="stylesheet">
+<script src="https://res.tuwan.com/js/jquery-1.12.3.min.js"></script>
+
+</head>
+<style type="text/css">
+.download_banner_bg_01{ background: url(https://res.tuwan.com/templet/play/download/images/download_banner_06.jpg?33) no-repeat center top;height: 889px; }
+.download_banner_bg_02{ background: url(https://res.tuwan.com/templet/play/download/images/download_banner_02.jpg) no-repeat center top;height: 915px; }
+.download_banner_bg_03{ background: url(https://res.tuwan.com/templet/play/download/images/download_banner_03.jpg) no-repeat center top;height: 848px; }
+.download_banner_bg_04{ background: url(https://res.tuwan.com/templet/play/download/images/download_banner_04.jpg) no-repeat center top;height: 881px; }
+.download_banner_bg_05{ background: url(https://res.tuwan.com/templet/play/download/images/download_banner_05.jpg) no-repeat center top;height:787px; }
+.download_btn_box{width: 1200px;margin:0 auto;}
+.download_position{padding-top: 520px;margin-left: 600px;}
+.ios_btn_hover,.android_btn_hover{display: none;}
+.ios_btn_box:hover .ios_btn,.android_btn_box:hover .android_btn{display: none;}
+.ios_btn_box:hover .ios_btn_hover,.android_btn_box:hover .android_btn_hover{display:inline-block;}
+.ios_code_box{width: 1150px;margin:0 auto;padding-top: 280px;}
+</style>  
+<body>
+
+<script src="https://user.tuwan.com/js/json2.js"></script>
+<script src="https://user.tuwan.com/js/jsencrypt.min.js"></script>
+<script src="https://user.tuwan.com/js/getRSAKey.js"></script>
+<script src="https://res.tuwan.com/user/js/function.js"></script>
+<script src="https://user.tuwan.com/js/encryption.js"></script>
+<script src="https://user.tuwan.com/js/securelogin.js"></script>
+<script src="https://user.tuwan.com/js/securereg.js"></script>
+<script src="https://user.tuwan.com/api/sendTGID.ashx"></script>
+<script src="https://user.tuwan.com/js/gt.js"></script>
+<!-- <script src="https://res.tuwan.com/templet/play/newregistration/newregistration.js?v=33"></script> -->
+<link rel="stylesheet" href="https://res.tuwan.com/templet/teach/index/css/common_index.css?4" type="text/css">
+<link rel="stylesheet" href="https://res.tuwan.com/templet/play/index/css/top_footer.css?052" type="text/css">
+<link rel="stylesheet" href="https://user.tuwan.com/css/geeteststyle.css" type="text/css">
+<link rel="stylesheet" href="https://res.tuwan.com/templet/play/public/css/common_head1.css?11" type="text/css">
+<!--登录 start-->
+<style type="text/css">
+    /*声优右边浮窗*/
+    .audio_right {
+        position: fixed;
+        bottom: 3%;
+        right: 1%;
+        z-index: 3;
+    }
+
+    .audio_close {
+        float: right;
+        position: absolute;
+        margin-top: 24px;
+        margin-left: 268px;
+        cursor: pointer;
+        color: #333;
+        font-size: 30px;
+    }
+
+    #common_top_box .common_payfor {
+        padding: 2px 5px;
+    }
+
+    .common_right {
+        /* margin-left: calc((63vw - 1050px)) !important */
+        margin-left: calc((63vw - 985px)) !important
+    }
+</style>
+
+<input type="hidden" value="1" id="checkall_name">
+<input type="hidden" value="1" id="checkall_phone">
+<input type="hidden" value="1" id="checkall_pwd">
+<input type="hidden" value="1" id="checkall_code">
+<div id="captcha"></div>
+<div id="index_pup_box" style="display: none;">
+    <div class="entry_pop_bg"></div>
+    <div class="entry_pop_box">
+        <div class="entry_pop_content">
+
+            <div class="enroll_box">
+                <div class="fl">
+                    <div class="fl enroll enroll_add">登录</div>
+                    <div class="fl enroll">注册</div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="fr close">
+                    <div class=" layer-cell-close"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+
+            <div class="fl" style="width:430px;">
+                <div class="enroll_content">
+                    <div class="register_box">
+                        <div class="register">
+                            <label> 账号</label>
+                            <input type="text" placeholder="请输入用户名/手机号" id="username" required>
+                            <div class="dislocation dislocation_02 usernameMsg"></div>
+                        </div>
+                        <div class="register">
+                            <label>密码</label>
+                            <input type="password" id="pwd" placeholder="请输入密码" required>
+                            <div class="dislocation dislocation_02 passwordMsg"></div>
+                        </div>
+                        <div class="register">
+                            <label>验证码</label>
+                            <input type="text" placeholder="验证码" required id="check" class="yanzheng identifying" required>
+                            <div class="dislocation dislocation_04 codeMsg"></div>
+                            <a style="padding-left: 20px" href="javascript:;" onclick="loadcode('code', 82, 30);"><img id="code" src="https://user.tuwan.com/api/action.ashx?t=verification&w=82&h=30&rand=0.2505340869538486"></a>
+                        </div>
+                    </div>
+
+                    <div class="voluntarily_box">
+                        <input type="checkbox" checked class="fl voluntarily01"><span></span>
+                        <div class="fl voluntarily02">下次自动登录</div>
+                        <a href="https://user.tuwan.com/resetpwd/" target="_blank" title="忘记密码？">
+                            <div class="fr voluntarily03">忘记密码?</div>
+                        </a>
+                    </div>
+                    <button class="identif_go mt35" id="button_post" onclick="check_login()">登录</button>
+                </div>
+                <div class="enroll_content" style="display: none;">
+                    <div class="register_box">
+                        <div class="register">
+                            <label> 手机</label>
+                            <input type="text" placeholder="请输入手机号" required id="ctl00_mainContent_txt_phone">
+                            <div class="dislocation dislocation_01" id="phone_tishi"></div>
+                        </div>
+                        <div class="register">
+                            <label>用户名</label>
+                            <input type="text" placeholder="请输入用户名" required id="user_name">
+                            <div class="dislocation dislocation_02" id="username_tishi"></div>
+                        </div>
+                        <div class="register">
+                            <label>密码</label>
+                            <input type="password" placeholder="请输入密码" required id="userpwd">
+                            <div class="dislocation dislocation_03" id="userpwd_tishi"></div>
+                        </div>
+                        <div class="register">
+                            <label>验证码</label>
+                            <input type="password" placeholder="验证码" class="identifying yanzheng" required id="phonecode">
+                            <div class="dislocation dislocation_0aa dislocation_04"></div>
+                            <button class="identif yanzheng_02" id="getcode">获取验证码</button>
+                        </div>
+                    </div>
+                    <input type="radio" class="fl radio_01" checked="checked" required>
+                    <div class="radio_box fl"><span>已阅读并同意</span><a style="color: #666" href="https://y.tuwan.com/userpoolpc" target="_blank">《兔玩网用户使用协议》</a></div>
+                    <div class="clearfix"></div>
+                    <button class="identif_go mt35" id="button_post1">注册</button>
+                </div>
+
+            </div>
+            <div class="fr entry_wbox mt50">
+                <div class="entry_01">第三方账号登录</div>
+                <a class="Wechat" href="javascript:;">
+                    <div class="entry_w">
+                        <img src="https://res.tuwan.com/templet/teach/index/images/entry_w.png">&nbsp;微信账号登录
+                    </div>
+                </a>
+                <a class="QQ" href="javascript:;">
+                    <div class="entry_qq">
+                        <img src="https://res.tuwan.com/templet/teach/index/images/entry_qq.png">&nbsp;QQ账号登录
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- 登录 end -->
+<div id="common_top_box">
+    <div class="fl common_top_logo">
+        <a href="https://y.tuwan.com/">
+            <img src="https://res.tuwan.com/templet/play/index/images/yuewanlogo3.png">
+        </a>
+    </div>
+    <div class="fl common_center_box" style="margin-left:2.5vw;">
+        <a href="//y.tuwan.com" target="_blank" class="fl common_top_nav">首页</a>
+        <a href="//y.tuwan.com/playlist/" target="_blank" class="fl common_top_nav">约陪玩</a>
+        <a href="//t.tuwan.com/?tuwan" target="_blank" class="fl common_top_nav">英雄训练营</a>
+        <!-- <a href="//y.tuwan.com/99/" target="_blank" class="fl common_top_nav">9.9专区</a> -->
+        <a href="//y.tuwan.com/recharge/" target="_blank" class="fl common_top_nav" style="color: #ff0000; position: relative;">充值</a>
+        <!-- <a href="//y.tuwan.com/fanli22/" target="_blank" class="fl common_top_nav" style="color: #ff0000; position: relative;">充值</a> -->
+        <a href="//y.tuwan.com/download/" target="_blank" class="fl common_top_nav">
+            <div class="common_wechat_box">
+                APP下载
+                <!-- <img src="//res.tuwan.com/templet/play/public/images/hot.png" class="hot_img"> -->
+                <div class="common_wechat" style="background: none; border:none; top: 20px; left: -152px; width: 338px;">
+                    <img src="https://res.tuwan.com/templet/play/chat/images/ewms.png?v=2">
+                </div>
+            </div>
+        </a>
+        <div class="search_box fl">
+            <div class="search_img_box">
+                <img src="//res.tuwan.com/templet/play/public/images/search.png" class="search_img">
+                <input type="text" placeholder="搜索房间/用户昵称" class="search_input" style="width: 190px;">
+            </div>
+        </div>
+        <!-- <div class="banner_box fl" style="margin-top:20px;margin-left:14px">
+            <a href="https://y.tuwan.com/2019boss" target="_blank"><img style="width:130px" src="https://res.tuwan.com/templet/play/2019party/img/dd_three.png?v=1"></a>
+        </div> -->
+    </div>
+    <div class="fl common_right mt15">
+        <!-- <a class="fl common_right_01 chatroom_enter" style="position:relative;color:#fa6543;font-size:14px" href="//y.tuwan.com/chatroom" target="_blank">
+            <img style="width:36px;" src="https://res.tuwan.com/templet/play/springfestivalbox/chaticon.gif" class="qt">
+            <br>
+            大厅
+        </a> -->
+        <div class="fl common_right_01 chatroom_enter" style="position:relative;">
+            <a href="//y.tuwan.com/chatroom" target="chatroom" style="color:#fa6543;font-size:14px">
+                <img style="width:36px;" src="https://res.tuwan.com/templet/play/springfestivalbox/chaticon.gif" class="qt">
+                <br>
+                大厅
+            </a>
+        </div>
+        <div class="common_right_02 fl"></div>
+        <a class="fl common_right_01  common_right_hover" href="javascript:;" target="_blank" id="msgCenter">
+            <img src="//res.tuwan.com/templet/play/public/images/message.png" class="qt">
+            <img src="//res.tuwan.com/templet/play/public/images/message_hover.png" style="display: none;" class="qt_hover">
+            <br>
+            消息
+            <div class="common_message" style="display:none;"></div>
+        </a>
+        <div class="common_right_02 fl"></div>
+        <a id="apply" class="fl common_right_01 common_right_hover chatroom_kaihei" style="position:relative;cursor: pointer;">
+            <img src="//res.tuwan.com/templet/play/public/images/join_us.png?v=1" class="qt">
+            <img src="//res.tuwan.com/templet/play/public/images/join_us_hover.png?v=1" style="display: none;" class="qt_hover">
+            <br>
+            入驻
+        </a>
+        <div class="common_right_02 fl"></div>
+        <div class="fl">
+            <a href="javascript:;" class="common_right_01 common_right_hover" style="display: none;" id="loginfalse">
+                <img src="//res.tuwan.com/templet/play/public/images/no_login.png" class="qt">
+                <img src="//res.tuwan.com/templet/play/public/images/no_login_hover.png" style="display: none;" class="qt_hover">
+                <br>
+                注册/登录
+            </a>
+            <div class="head_img_bigbox" id="logintrue">
+                <div class="head_img_hide_box">
+                    <a href="" class="ocenter_order" target="_blank">
+                        <div class="fl head_img_box"></div>
+                        <div class="fl ml10">
+                            <div>
+                                <div class="fl common_head_name nickname mr10" style="width:60px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></div>
+                                <div class="fl mr10 common_head_name liangcode22" style="display:none;"><img src="//res.tuwan.com/templet/play/public/images/good.png"></div>
+                                <div class="fl common_runk_number" style="display:none;">
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="common_head_id"><span class="mr5 user_uid"></span><img src="//res.tuwan.com/templet/play/public/images/common_bottom.png"></div>
+                        </div>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="common_login">
+                    <div class="common_wechat_img"><img src="//res.tuwan.com/templet/play/public/images/common_top.png">
+                    </div>
+                    <div>
+                        <div class="drop_out" id="dologout">退出</div>
+                        <div class="clearfix"></div>
+                        <a href="" class="ocenter_order" target="_blank">
+                            <div class="head_img_small"></div>
+                        </a>
+                        <div class="hide_common mt5 mb5 nickname"></div>
+                        <div class="fl common_runk_number  common_runk_number_01"></div>
+                        <a class="means_box fl ml10 mr10" href="" target="_blank"><img src="//res.tuwan.com/templet/play/public/images/means.png" class="means"><img src="//res.tuwan.com/templet/play/public/images/means_hover.png" class="means_hover">&nbsp;资料</a>
+                        <a class="order_box fl" href="//y.tuwan.com/home/ocenter/" target="_blank"><img src="//res.tuwan.com/templet/play/public/images/order.png" class="order"><img src="//res.tuwan.com/templet/play/public/images/order_hover.png" class="order_hover">&nbsp;订单</a>
+                        <div class="clearfix"></div>
+                        <div class="contribution_value mt15 mb10"></div>
+                        <div class="common_vip_box">
+                            <div class="common_vip_line_box">
+                                <div class="common_vip_line"></div>
+                            </div>
+                            <div class="fl vip_text v_top"></div>
+                            <div class="fr vip_text v_bottom"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="money_01_bigbox mt20">
+                            <a href="//y.tuwan.com/recharge/" target="_blank">
+                                <div class="fl money_01_box">
+                                    <div class="current_money"></div>
+                                    <div class="money_01"><img src="//res.tuwan.com/templet/play/public/images/money_01.png">&nbsp;账户余额
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="//y.tuwan.com/recharge/?tab=diamond" target="_blank">
+                                <div class="fl money_01_box">
+                                    <div class="current_value"></div>
+                                    <div class="money_01"><img src="//res.tuwan.com/templet/play/public/images/zuanshi.png">&nbsp;<span class="current_value_info"></span></div>
+                                </div>
+                            </a>
+                            <a class="fl common_payfor" href="//y.tuwan.com/recharge/" target="_blank">
+                                充值
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    var vipLeftNum, vipNextLevel, vipNowLevel;
+    var gloabUID = 0;
+
+    $(".chatroom_enter").hover(
+        function() {
+            $('.channel_list_modal').show()
+        },
+        function() {
+            $('.channel_list_modal').hide()
+        }
+    );
+    $(".common_right_hover").hover(
+        function() {
+            $(this).find(".qt").hide();
+            $(this).find(".qt_hover").show();
+            $(this).addClass("common_right_01_add")
+        },
+        function() {
+            $(this).find(".qt_hover").hide();
+            $(this).find(".qt").show();
+            $(this).removeClass("common_right_01_add")
+        }
+    );
+    $(".common_wechat_box").hover(
+        function() {
+            $(".common_wechat").stop().slideDown("fast");
+        },
+        function() {
+            $(".common_wechat").stop().slideUp("fast");
+        }
+    );
+    $(".head_img_bigbox").hover(
+        function() {
+            $(".common_login").stop().slideDown("fast");
+        },
+        function() {
+            $(".common_login").stop().slideUp("fast");
+        }
+    );
+
+    $('.landing_box').hover(function() {
+        $('.down_nav').stop().slideUp();
+        $('.develop_nav').stop().slideDown();
+
+    }, function() {
+        $('.develop_nav').stop().slideUp();
+        $('.down_nav').stop().slideDown();
+    })
+    $('#getcode').focus(function() {
+        $('.dislocation_01').html('');
+    })
+
+    var n = 0;
+    $(".bottom_border").click(function() {
+
+        $(this).addClass("bottom_add").siblings().removeClass("bottom_add");
+        n = $(".bottom_border").index(this);
+        $(".student").eq(n).show().siblings().hide();
+    })
+
+    function check_login() {
+        var username = $('#username').val();
+        var pwd = $('#pwd').val();
+        var check = $('#check').val();
+        slogin(username, pwd, check, 'pc', obj);
+    }
+
+    function slogin(username, password, code, platform, callback) {
+
+        var sendData = new Object();
+        sendData.username = username;
+        sendData.password = password;
+        sendData.code = code;
+        sendData.platform = platform;
+
+        var content = packSendData_general(sendData);
+        $.ajax({
+            type: "post",
+            url: "//user.tuwan.com/api/method/login",
+            dataType: "jsonp",
+            jsonp: "callback",
+            data: { data: content },
+            success: function(data) {
+                var ret = data;
+                if (ret.code != 0) {
+                    var publicKey = (ret.data);
+                }
+                var code = data.code * 1;
+
+                // callback(ret);
+                if (code == 0) {
+                    window.location.href = location.href;
+                } else if (code == -1003 || code == -1004) {
+                    $('.passwordMsg').html(data.msg);
+                } else if (code == -1005) {
+                    $('.codeMsg').html(data.msg);
+                } else if (code == -1007 || code == -1037) {
+                    $('.codeMsg').html("您未设置密码，请点‘忘记密码’重置密码");
+                }
+            }
+        });
+    }
+
+    strhref = location.href;
+    if (strhref.indexOf("?") > -1) strhref = strhref + '&success=1';
+    else strhref = strhref + '?success=1';
+
+
+
+    function obj(data) {
+        if (data.code == '0') {
+            window.location.href = strhref;
+        }
+        if (data.code == -1003 || data.code == -1004) {
+            $('.passwordMsg').html(data.msg);
+        }
+        if (data.code == -1005) {
+            $('.codeMsg').html(data.msg);
+        }
+
+    }
+    // BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800186693, selector: 'BizQQWPA'});
+
+    function search() {
+        var keyword = $.trim($(".search_input").val());
+        if (keyword == '') {
+            return;
+        }
+
+        var url = '//y.tuwan.com/search/?kw=' + encodeURIComponent(keyword);
+        window.open(url);
+    }
+
+    function avatarNoFound(that) {
+        that.src = "https://uc.tuwan.com/images/noavatar_middle.gif";
+        that.onerror = null;
+    }
+
+    function nameFormat(objname, picsize, picmargin) {
+        var user_nickname = "";
+        if (objname) {
+            user_nickname = objname.replace("♕", '<img style="width:' + picsize + 'px;height:' + picsize + 'px;margin-top:' + picmargin + 'px" src="https://res.tuwan.com/templet/play/fanli4/nianguan.gif?v=1">')
+            user_nickname = user_nickname.replace("♔", '<img style="width:' + picsize + 'px;height:' + picsize + 'px;margin-top:' + picmargin + 'px" src="https://res.tuwan.com/templet/play/fanli4/yueguan.gif?v=1">')
+        }
+        return user_nickname
+    }
+
+    $('#apply').attr("flag", "0");
+    $(function() {
+        msg();
+
+
+        function msg() {
+            $.ajax({
+                url: "//app.tuwan.com/Message/GetMessage.ashx?classid=2",
+                dataType: 'json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                crossDomain: true,
+                success: function(obj) {
+                    var obj = eval(obj);
+                    var result = obj.result;
+                    if (result == '失败') {
+                        $('.common_message').hide();
+                        return;
+                    }
+                    var TotalUnRead = result.TotalUnRead
+                    if (TotalUnRead < 1) {
+                        $('.common_message').hide();
+                    } else {
+                        $('.common_message').show();
+                        $('.common_message').html(TotalUnRead);
+                    }
+                }
+            })
+        }
+
+        $.ajax({
+            url: "https://yapi.tuwan.com/User/indexInfo?format=jsonp",
+            type: "get",
+            dataType: "jsonp",
+            success: function(obj) {
+                if (obj.error != -1) {
+                    var vipinfo = obj.playvip;
+                    var currencyinfo = obj.currency;
+                    gloabUID = obj.uid;
+                    $('#apply').attr("href", "//y.tuwan.com/home/playerinfo/");
+                    $('#apply').attr("target", "_blank");
+                    $('#apply').attr("flag", "1");
+                    $('.head_img_box').html('<img src="' + obj.avatar + '" onerror="avatarNoFound(this)">');
+                    $('.head_img_small').html('<img src="' + obj.avatar + '" onerror="avatarNoFound(this)">');
+                    $('.nickname').html(obj.nickname);
+                    if (vipinfo > 0) {
+                        var vipclass = 'common_runk_01';
+                        if (vipinfo == 2) {
+                            vipclass = 'common_runk_02';
+                        } else if (vipinfo == 3) {
+                            vipclass = 'common_runk_03';
+                        } else if (vipinfo == 4) {
+                            vipclass = 'common_runk_04';
+
+                        } else if (vipinfo == 5) {
+                            vipclass = 'common_runk_05';
+
+                        } else if (vipinfo == 6) {
+                            vipclass = 'common_runk_06';
+
+                        } else if (vipinfo == 7) {
+                            vipclass = 'common_runk_07';
+
+                        } else if (vipinfo == 8) {
+                            vipclass = 'common_runk_08';
+
+                        } else if (vipinfo == 9) {
+                            vipclass = 'common_runk_09';
+
+                        } else if (vipinfo == 10) {
+                            vipclass = 'common_runk_10';
+
+                        } else if (vipinfo == 11) {
+                            vipclass = 'common_runk_11';
+
+                        } else if (vipinfo == 12) {
+                            vipclass = 'common_runk_12';
+
+                        }
+
+                        $('.common_runk_number').addClass(vipclass);
+
+                        $('.common_runk_number').show();
+                    } else {
+                        vipclass = 'common_runk_00';
+                        $('.common_runk_number').addClass(vipclass);
+                        $('.common_runk_number').show();
+                    }
+
+                    var vipdengcha = parseInt(obj.lowerplayhonor) - parseInt(obj.playhonor);
+                    var vipbaofenbi = parseInt(obj.playhonor) / parseInt(obj.lowerplayhonor) * 100;
+
+                    vipLeftNum = vipdengcha
+                    vipNextLevel = obj.lowerplay
+                    vipNowLevel = vipinfo
+                    if (vipinfo >= 11) {
+                        $('.contribution_value').html('恭喜！您己满级');
+                        $('.v_top').html('<span>VIP' + vipinfo + '</span>');
+                        $('.v_bottom').html('');
+                        $('.common_vip_line').css('width', '100%');
+                    } else {
+                        $('.contribution_value').html('升级还需<span>' + vipdengcha + '</span>贡献值');
+                        $('.v_top').html('VIP' + vipinfo);
+                        $('.v_bottom').html('VIP' + obj.lowerplay);
+                        $('.common_vip_line').css('width', vipbaofenbi + '%');
+                    }
+
+                    uidflag = obj.vipuserid > 0 ? obj.vipuserid : obj.uid;
+                    $('.user_uid').html('UID:' + uidflag);
+
+                    $('.current_money').html(obj.currency);
+
+                    if (obj.vipuserid > 0) {
+                        $('.liangcode22').show();
+                        if (obj.viplevel == 1) {
+                            $('.liangcode22 img').attr("src", "//res.tuwan.com/templet/play/index/images/hao.png")
+                        } else {
+                            $('.liangcode22 img').attr("src", "//res.tuwan.com/templet/play/public/images/good.png")
+                        }
+                    } else {
+                        $('.liangcode22').hide();
+                    }
+
+                    if (obj.isteacher == 1) {
+                        $('.means_box').attr('href', '//y.tuwan.com/home/advisor/');
+
+                        $('.common_payfor').html('提现');
+                        $('.common_payfor').attr('href', '//y.tuwan.com/home/withdraw/');
+                        $('.ocenter_order').attr('href', '//y.tuwan.com/home/advisor/');
+                    } else {
+                        $('.means_box').attr('href', '//y.tuwan.com/home/data/');
+
+                        $('.common_payfor').html('充值');
+                        $('.common_payfor').attr('href', '//y.tuwan.com/recharge/');
+                        $('.ocenter_order').attr('href', '//y.tuwan.com/home/ocenter/');
+                    }
+
+                    $('.current_value_info').html('钻石');
+                    $('.current_value').html(obj.diamond);
+                    $('#loginfalse').hide();
+                    $('#logintrue').show();
+
+                    $('#msgCenter').attr("href", "https://y.tuwan.com/home/msg/");
+                } else {
+                    $('#apply').attr("flag", "0");
+                    $('#loginfalse').show();
+                    $('#logintrue').hide();
+                }
+            }
+        })
+        $('#apply').click(function() {
+            if ($(this).attr("flag") == 0) {
+                $('#index_pup_box').show();
+            }
+        })
+        $(document).on('click', '#dologout', function() {
+            $.ajax({
+                url: "//app.tuwan.com/comment2/api/useraction.ashx?method=loginout",
+                dataType: "jsonp",
+                success: function(obj) {
+                    delCookie("isLimited")
+                    location.reload(true);
+                }
+            })
+        })
+        // 回车键事件 
+        $(document).keypress(function(e) {
+            if (e.which == 13) {
+                if ($('#index_pup_box').css('display') == 'block') {
+                    check_login();
+                } else {
+                    var isFocus = $(".search_input").is(":focus");
+                    if (isFocus) {
+                        search();
+                    }
+                }
+
+            }
+        })
+        $('#index_pup_box input').focus(function() {
+            $(this).next().html("");
+        })
+
+        function readCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg)) {
+                return unescape(arr[2]);
+            } else {
+                return null;
+            }
+        }
+
+        function delCookie(name) {
+            var cval = readCookie(name);
+            if (cval != null) {
+                document.cookie = name + "=;path=/;expires=" + (new Date(0)).toGMTString();
+            }
+        }
+        //注册
+        //校验手机
+        function CheckPhone() {
+            var val = $('#ctl00_mainContent_txt_phone').val();
+            var reg_phone = /^1\d{10}$/;
+            if (!reg_phone.test(val)) {
+                $("#phone_tishi").text("手机号必须为11位数字");
+                $("#checkall_phone").val(0);
+                return;
+            }
+            var sendData = new Object();
+            sendData.username = val;
+            sendData.platform = 'mobile';
+            var content = packSendData_general(sendData);
+            $.ajax({
+                type: "post",
+                url: "//user.tuwan.com/api/method/chkuser",
+                dataType: 'jsonp',
+                data: {
+                    data: content
+                },
+                success: function(data) {
+                    if (data.code != 0) {
+                        publicKey = (data.data);
+                        $("#phone_tishi").text(data.msg);
+                        $("#checkall_phone").val(0);
+                        return;
+                    } else {
+                        $("#checkall_phone").val(1);
+                        $("#phone_tishi").html('<img src="//res.tuwan.com/templet/teach/index/images/ture.png"/>');
+                    }
+                }
+            });
+        }
+        $('#ctl00_mainContent_txt_phone').blur(function() {
+            CheckPhone();
+        })
+        //校验用户名
+        function CheckUserName() {
+            var val = $("#user_name").val();
+            var pattern = new RegExp("[%--`~!\#@$^&*()\\s\=|{}':;',\\[\\].<>/?~！@￥……&*（）——|{}【】‘；：”“'。，、？\"]");
+            var pattern_2 = new RegExp("[0-9]+");
+            if (val.length > 15 || val.length < 3) {
+                $("#username_tishi").html("用户名格式不符合要求");
+                $("#checkall_name").val(0);
+                return;
+            }
+            if (val.match(pattern) != null) {
+                $("#username_tishi").html("用户名包含敏感字符");
+                $("#checkall_name").val(0);
+                return;
+            } else {
+                if (val.match(pattern_2) == val) {
+                    $("#username_tishi").html("用户名不能为纯数字");
+                    $("#checkall_name").val(0);
+                    return;
+                } else {
+                    var sendData = new Object();
+                    sendData.username = val;
+                    sendData.platform = 'pc';
+                    var content = packSendData_general(sendData);
+                    console.log(content)
+                    $.ajax({
+                        type: "post",
+                        url: "//user.tuwan.com/api/method/chkuser",
+                        dataType: 'jsonp',
+                        data: {
+                            data: content
+                        },
+                        success: function(data) {
+                            console.log(data)
+                            if (data.code != 0) {
+                                publicKey = (data.data);
+                                $("#username_tishi").text(data.msg);
+                                $("#checkall_name").val(0);
+                                return;
+                            } else {
+                                $("#checkall_name").val(1);
+                                $("#username_tishi").html('<img src="//res.tuwan.com/templet/teach/index/images/ture.png"/>');
+                            }
+                        }
+                    });
+                }
+            }
+        }
+        $('#user_name').blur(function() {
+            $('.dislocation_box').eq(0).css('display', 'none');
+            CheckUserName();
+        })
+        //校验密码
+        function CheckUserPass() {
+            if ($("#userpwd").val() == '') {
+                $("#userpwd_tishi").html("密码不能为空");
+                $("#checkall_pwd").val(0);
+                return;
+            } else if ($("#userpwd").val().length > 20 || $("#userpwd").val().length < 6) {
+                $("#userpwd_tishi").html("密码不符合要求");
+                $("#checkall_pwd").val(0);
+                return;
+            } else if ($("#userpwd").val() == $("#user_name").val()) {
+                $("#userpwd_tishi").html("密码不能和用户名相同");
+                $("#checkall_pwd").val(0);
+                return;
+            } else if ($("#userpwd").val() == $("#ctl00_mainContent_txt_phone").val()) {
+                $("#userpwd_tishi").html("密码不能和手机号相同");
+                $("#checkall_pwd").val(0);
+                return;
+            } else {
+                $("#checkall_pwd").val(1);
+                $("#userpwd_tishi").html('<img src="//res.tuwan.com/templet/teach/index/images/ture.png"/>');
+            }
+        }
+        $('#userpwd').blur(function() {
+            $('.dislocation_box').eq(1).css('display', 'none');
+            CheckUserPass();
+        })
+
+
+        var countdown = 60;
+
+        function settime(obj) {
+            if (countdown <= 0) {
+                obj.removeAttr("disabled");
+                obj.html("获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                obj.attr("disabled", "disabled");
+                obj.html("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                settime(obj)
+            }, 1000)
+        }
+        //验证码校验
+        var bindFlag = false;
+        var handler = function(captchaObj) {
+            // 将验证码加到id为captcha的元素里
+        $("#getcode").click(function() {
+            CheckPhone();
+            CheckUserName();
+            CheckUserPass();
+            var phone = $("#ctl00_mainContent_txt_phone").val(); //获取手机号
+            var username = $("#user_name").val(); //获取用户名
+            var userpwd = $("#userpwd").val(); //获取密码
+            if ($("#checkall_phone").val() == 1 && $("#checkall_name").val() == 1 && $("#checkall_pwd").val() == 1) {
+                if (!bindFlag) {
+                    // $(".gt_holder").addClass('gt_show');
+                    // captchaObj.bindOn("#getcode");
+                    // $('.gt_show').css('z-index', '9999999');
+                    // bindFlag = true;
+                }
+                    captchaObj.verify();
+
+
+
+            }
+        });
+            // captchaObj.appendTo("#captcha");
+            captchaObj.onSuccess(function() {
+
+                var validate = captchaObj.getValidate();
+                if (!validate) { //判断回执
+                    return;
+                }
+                var sendData = new Object();
+                sendData.t = $("#ctl00_mainContent_txt_phone").val();
+                sendData.c = validate.geetest_challenge;
+                sendData.v = validate.geetest_validate;
+                sendData.s = validate.geetest_seccode;
+                var content = packSendData_general(sendData);
+                $.ajax({
+                    url: "//user.tuwan.com/api/requestCode.ashx?t\x3d" + (new Date).getTime(),
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    data: {
+                        data: content
+                    },
+                    success: function(data) {
+
+                    }
+                });
+                settime($("#getcode"));
+
+            });
+
+        };
+
+
+
+        $.ajax({
+            // 获取id，challenge，success（是否启用failback）
+            url: "//user.tuwan.com/api/getSlider.ashx?t=" + (new Date()).getTime(),
+            type: "get",
+            dataType: "jsonp", // 使用jsonp格式
+            success: function(data) {
+                // 使用initGeetest接口
+                // 参数1：配置参数，与创建Geetest实例时接受的参数一致
+                // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它做appendTo之类的事件
+                initGeetest({
+                    gt: data.gt,
+                    challenge: data.challenge,
+                    product: "bind", // 产品形式
+                    offline: !data.success,
+                    new_captcha: data.new_captcha
+                }, handler);
+            }
+        });
+
+        $("#phonecode").focus(function() {
+            $(".dislocation_0aa").html("");
+        })
+        //注册按钮
+        $("#button_post1").click(function() {
+            var phone = $("#ctl00_mainContent_txt_phone").val(); //获取手机号
+            var username = $("#user_name").val(); //获取用户名
+            var userpwd = $("#userpwd").val(); //获取密码
+            var phonecode = $("#phonecode").val(); //获取手机验证码
+            if ($("#checkall_phone").val() == 1 && $("#checkall_name").val() == 1 && $("#checkall_pwd").val() == 1) {
+
+
+
+                //console.info(publicKey);
+
+                var sendData = new Object();
+
+                sendData.n = username;
+                sendData.p = userpwd;
+                sendData.t = phone;
+                sendData.c = phonecode;
+
+
+                var content = packSendData_general(sendData);
+
+                console.info(content);
+
+                sreg(username, userpwd, phone, phonecode, callback);
+
+                function callback(data) {
+                    if (data.code == "0") {
+
+                        var registhref = location.href;
+                        if (registhref.indexOf("?") > -1) registhref = registhref + '&successregist=1';
+                        else registhref = registhref + '?successregist=1';
+
+                        window.location.href = strhref;
+                    } else {
+                        $(".dislocation_0aa").html("验证码错误");
+                    }
+                }
+            }
+        });
+        $("#user_name").focus(function() {
+            $('.dislocation_box').eq(0).css('display', 'block');
+        })
+        $("#userpwd").focus(function() {
+            $('.dislocation_box').eq(1).css('display', 'block');
+        })
+
+        $('#loginfalse').click(function() {
+            $('#index_pup_box').show();
+            loadcode('code', 82, 30);
+        })
+
+        $('#msgCenter').click(function() {
+            const href = $(this).attr("href");
+            if (href == "javascript:;") {
+                $('#index_pup_box').show();
+                loadcode('code', 82, 30);
+            }
+            // $.ajax({
+            //     url: "https://yapi.tuwan.com/User/indexInfo?format=jsonp",
+            //     type: "get",
+            //     dataType: "jsonp",
+            //     success: function(obj) {
+            //         if (obj.error != -1) {
+            //             window.open("//y.tuwan.com/home/msg/")
+            //         } else {
+            //             $('#index_pup_box').show();
+            //             loadcode('code', 82, 30);
+            //         }
+            //     }
+            // })
+        })
+
+        $('.search_img_box .search_img').click(function() {
+            search();
+        })
+
+        var n = 0;
+        $(".enroll").click(function() {
+            $(this).addClass("enroll_add").siblings().removeClass("enroll_add");
+            n = $(".enroll").index(this);
+            $(".enroll_content").eq(n).show().siblings().hide();
+        })
+        $(".close").click(function() {
+            $('#index_pup_box').hide()
+            $(".bangmask_little").css('display', "block");
+        })
+        $('.QQ').attr('href', '//user.tuwan.com/api/url.ashx?app=qq&redirect_uri=' + encodeURIComponent(strhref));
+        $('.Wechat').attr('href', '//user.tuwan.com/api/url.ashx?app=weixin&redirect_uri=' + encodeURIComponent(strhref));
+    });
+    $(".close_year").on("click", function() {
+        $(".year1130_box").hide();
+    })
+
+
+    var leng = $('.common_top_nav').length;
+    for (i = 0; i < leng; i++) {
+        var href = $('.common_top_nav').eq(i).attr('href');
+        if (href.indexOf(location.pathname) != -1 && location.pathname != '/') {
+            $(".common_top_nav").eq(i).addClass("common_top_nav_add");
+        }
+    }
+    if (location.pathname == '/') $(".common_top_nav").eq(0).addClass("common_top_nav_add");
+    $(".audio_close").on("click", function() {
+        $(".audio_right").hide();
+    })
+
+    getChannelList()
+
+    function getChannelList() {
+        $.ajax({
+            url: "https://yapi.tuwan.com/Chatroom/getPcIndexNav",
+            type: "get",
+            dataType: "jsonp",
+            success: function(response) {
+                if (response.error == 0) {
+                    renderChannelHtml(response.data)
+                }
+            }
+        })
+    }
+
+    function renderChannelHtml(data) {
+        var channel_list_modal = ""
+        var channelGameList = ""
+        var channelAmuseList = ""
+        var channelMobileList = ""
+        var channelLolList = ""
+        var channelPubgList = ""
+        var gameData = data.game;
+        var amuseData = data.amuse;
+        var mobileData = data.mobile;
+        var lolData = data.lol;
+        var pubgData = data.pubg;
+        var imgurl_html = '';
+        for (x in gameData) {
+            channelGameList += '<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/' + gameData[x].cid + '"><li style="color:' + gameData[x].color + '">' + gameData[x].title + "</li></a>"
+        }
+        channelGameList += '<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/' + gameData[0].cid + '">全部综合</a>'
+
+        for (x in mobileData) {
+            channelMobileList += '<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/' + mobileData[x].cid + '"><li style="color:' + mobileData[x].color + '">' + mobileData[x].title + "</li></a>"
+        }
+        channelMobileList += '<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/' + mobileData[0].cid + '">全部手游</a>'
+
+        for (x in amuseData) {
+            channelAmuseList += '<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/' + amuseData[x].cid + '" style="z-index:10"><li style="color:' + amuseData[x].color + '">' + amuseData[x].title + "</li></a>"
+        }
+        channelAmuseList += '<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/' + amuseData[0].cid + '">全部娱乐</a>'
+
+        for (x in lolData) {
+            channelLolList += '<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/' + lolData[x].cid + '"><li style="color:' + lolData[x].color + '">' + lolData[x].title + "</li></a>"
+        }
+        channelLolList += '<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/' + lolData[0].cid + '">全部LOL</a>'
+
+        for (x in pubgData) {
+            channelPubgList += '<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/' + pubgData[x].cid + '"><li style="color:' + pubgData[x].color + '">' + pubgData[x].title + "</li></a>"
+        }
+        channelPubgList += '<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/' + pubgData[0].cid + '">全部绝地</a>'
+
+        var maxNum = Math.max(gameData.length, mobileData.length, amuseData.length, lolData.length, pubgData.length) * 28
+
+        channel_list_modal = '<div class="channel_list_modal">\
+                                <div class="channel_list_nav">\
+                                    <div style="margin-left:28px;"><a href="https://y.tuwan.com/chatroom/' + lolData[0].cid + '" target="chatroom">LOL</a></div>\
+                                    <div style="margin-left:133px;"><a href="https://y.tuwan.com/chatroom/' + pubgData[0].cid + '" target="chatroom">绝地</a></div>\
+                                    <div style="margin-left:122px;"><a href="https://y.tuwan.com/chatroom/' + gameData[0].cid + '" target="chatroom">综合</a></div>\
+                                    <div style="margin-left:146px;"><a href="https://y.tuwan.com/chatroom/' + mobileData[0].cid + '" target="chatroom">手游</a></div>\
+                                    <div style="margin-left:94px;"><a href="https://y.tuwan.com/chatroom/' + amuseData[0].cid + '" target="chatroom">娱乐</a></div>\
+                                </div>\
+                                <div class="nav_bottom_line"></div>\
+                                <div class="list_content">\
+                                    <ul style="height:' + maxNum + 'px;">' + channelLolList + '</ul>\
+                                    <ul style="height:' + maxNum + 'px;">' + channelPubgList + '</ul>\
+                                    <ul style="height:' + maxNum + 'px;">' + channelGameList + '</ul>\
+                                    <ul style="height:' + maxNum + 'px;">' + channelMobileList + '</ul>\
+                                    <ul style="height:' + maxNum + 'px;border:none">' + channelAmuseList + '</ul>\
+                                </div>\
+                            </div>'
+
+        $('.chatroom_enter').append(channel_list_modal)
+        // return channel_list_modal
+
+
+        // <img class="nav_bottom_line" src="https://res.tuwan.com/templet/play/2019nationalday/line.png">\
+        // <img class="nav_bottom_line" src="https://res.tuwan.com/templet/play/20191111/line.png">\
+    }
+</script>
+
+<style>
+    .channel_list_modal {
+        display: none;
+        position: absolute;
+        top: 52px;
+        width: 790px;
+        right: -376px;
+        min-height: 265px;
+        background: url(https://res.tuwan.com/templet/play/2019nationalday/top_channel_list_bg.png?v=1);
+        background-size: 100% 100%;
+        z-index: 10000;
+        padding-bottom: 70px;
+    }
+
+    .channel_item {
+        display: block;
+    }
+
+    .channel_item li {
+        /* width: 100%; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .list_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 730px;
+        margin: 0 auto;
+        margin-top: -20px;
+    }
+
+    .nav_bottom_line {
+        width: 730px;
+        height: 9px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+        background: url(https://res.tuwan.com/templet/play/20191111/line.png);
+    }
+
+    .channel_list_nav {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #666;
+        font-weight: bold;
+        width: 730px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .channel_list_modal ul {
+        width: 142px;
+        position: relative;
+        list-style: none;
+        border-right: 1px solid #f5f5f5;
+    }
+
+    .channel_list_modal ul:last-child {
+        border: unset
+    }
+
+    .channel_list_modal li {
+        padding-left: 20px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+        color: #666666;
+        text-align: left;
+    }
+
+    .channel_list_modal li:hover {
+        background: #f5f5f5;
+    }
+
+    .all_btn_item {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -45px;
+        display: block;
+        font-size: 12px;
+        color: #a8a8a8;
+        background: #f5f5f5;
+        width: 130px;
+        height: 26px;
+        line-height: 26px;
+        text-align: center;
+        border-radius: 13px;
+        margin: 0 auto;
+    }
+
+    .all_btn_item:hover {
+        color: #666666;
+    }
+</style>
+	<div class="download_banner_bg_01"></div>
+	<div class="download_banner_bg_02"></div>
+	<div class="download_banner_bg_05">
+		<div class="ios_code_box">
+			<a class="fl ios_btn_box" href="https://itunes.apple.com/cn/app/id1295512819?mt=8" target="_blank"><img src="https://res.tuwan.com/templet/play/download/images/ios_code.png" class="ios_btn" ><img src="https://res.tuwan.com/templet/play/download/images/ios_code_hover.png" class="ios_btn_hover"></a>
+			<a class="fl ml50 android_btn_box" href="http://apk.tuwan.com/yuewan130.apk" target="_blank"><img src="https://res.tuwan.com/templet/play/download/images/android_code.png" class="android_btn"><img src="https://res.tuwan.com/templet/play/download/images/android_code_hover.png" class="android_btn_hover"></a>
+			<img src="https://res.tuwan.com/templet/play/download/images/download.png" class="fl ml50">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+<style>
+  .wenww{
+    color: #959595;
+  }
+  .wenww:hover{
+    color: #fff;
+  }
+</style>
+
+<div style="clear: both;"></div>
+<div id="footer" style="float: left; width: 100%;">
+  <div class="footer_box">
+    <a href="javascript:" title="" class="fl"><img src="https://res.tuwan.com/templet/play/index/images/consume_new.jpg"></a>
+    <div class="clearfix"></div>
+    <div class="help_box mt30" style="display: flex; justify-content: center;">
+      <div class="fl ml35 pr30 border_right"><i class="icon custom mr10"></i>客服电话：<span class="custom_01">010-68608228</span><span class="custom_02">咨询时间：7X24小时</span></div>
+      <div class="fl pl30" id="dd_kefu_pcbottom" style="cursor: pointer;"><i class="icon QQ mr10"></i>客服QQ：<span class="custom_01">800184580</span></div><div class="fl pl30"><span class="custom_02">咨询时间：7X24小时</span></div>
+      <div class="fl ml40">
+        <a href="https://y.tuwan.com/playpoolpc" target="_blank" title="" class="fl help">帮助中心</a>
+        <!-- <a href="javascript:" title="" class="fl help">服务保障</a> -->
+        <!-- <a href="javascript:" title=""  class="fl help">陪玩守则</a> -->
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="Copy">电话号码:010-68608228&nbsp;&nbsp;公司地址:北京市石景山区鲁谷路74号院中国瑞达大厦19层1909&nbsp;&nbsp;公司全称:北京陶乐科技有限公司&nbsp;&nbsp;备案号：<a class="wenww" target="_blank" href="http://beian.miit.gov.cn/">京ICP备18042855号-2</a></div>
+    <div class="Copy" style="margin:10px"><a class="wenww" target="_blank" href="https://res.tuwan.com/templet/play/images/wenww.jpg">京网文[2019]4777-514号</a>&nbsp;&nbsp;<a class="wenww" target="_blank" href="https://y.tuwan.com/zhengzhi">增值电信业务经营许可证：京B2-20192592</a><a target="_blank" class="wenww" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010702002006"><img style="margin-left:10px" src="http://res.tuwan.com/templet/play/public/images/police.png">京公网安备 11010702002006号</a></div>
+    <div class="Copy" style="margin-top:10px;">Copyright 2014-2020 TaoLe Corporation,All Rights Reserved</div>
+  </div>
+</div>
+<div style="display:none">
+<span id="cnzz_stat_icon_1000286078"></span>
+<script async src="//w.cnzz.com/q_stat.php?id=1000286078" type="text/javascript"></script>
+<span id="cnzz_stat_icon_1261314581"></span>
+<script async src="//w.cnzz.com/q_stat.php?id=1261314581" type="text/javascript"></script>
+</div>
+<!-- WPA start -->
+<script id="qd2852161723ad87209142c456bcb0954de7a16e34d6" src="https://wp.qiye.qq.com/qidian/2852161723/ad87209142c456bcb0954de7a16e34d6" charset="utf-8" async defer></script>
+<!-- WPA end -->
+<script src="https://res.tuwan.com/templet/play/public/js/tuwan_message.js?201805251801"></script>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <style>
+    .yw-gg-float{
+        position: fixed;left: 0;bottom: 138px;width: 100%;height: 0;z-index: 999;
+    }
+    .yw-gg-float .yw-big-show{
+        position: relative; display: block; width: 1100px; height: 138px; display: none; background-image: url(http://res.tuwan.com/templet/play/images/yanwo-big.png); margin: 0 auto;cursor: default;
+    }
+    .yw-gg-float .yw-big-show .yw-close{
+        position: absolute; width: 19px; height: 19px; background-image: url(http://res.tuwan.com/templet/play/images/yanwo-close.png); right: 12px; top: 30px; cursor: pointer;
+    }
+    .yw-gg-float .yw-jump{
+        display: block; position: absolute; width: 100%; height: 100%; left: 0; top: 0;
+    cursor: default;
+    }
+    .yw-gg-float .yw-small-show{
+        width: 161px; height: 120px; display: none; position: absolute; left: 0; top: 0; background-image: url(http://res.tuwan.com/templet/play/images/yanwo-small.png); cursor: default;
+    }
+    .yw-gg-float .yw-open{
+        width: 20px; height: 36px; position: absolute; right: 13px; top: 40px; background-image: url(http://res.tuwan.com/templet/play/images/yanwo-open.png); cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="yw-gg-float">
+    <div class="yw-big-show">
+        <a href="javascript:void(0)" class="yw-jump"></a>
+        <div class="yw-close"></div>
+    </div>
+    <div class="yw-small-show" style="display: none;">
+        <a href="javascript:void(0)" class="yw-jump"></a>
+        <div class="yw-open"></div>
+    </div>
+</div>
+    <script>
+        var ywJumpUrl = "javascript:void(0)";
+    //var ywJumpUrl = "http://y.tuwan.com/"
+    var close = "1";
+    var myDate = new Date();
+    //获取当前年
+    var year = myDate.getFullYear();
+    //获取当前月
+    var month = myDate.getMonth() + 1;
+    //获取当前日
+    var date = myDate.getDate();
+    var nowtime = year.toString() +  month.toString() + date.toString();
+
+    var localtime = localStorage.getItem("yy-gg-time");
+
+    if(localtime){
+        if(localtime !== nowtime){
+            close = "1";
+            localStorage.setItem("yy-gg-state", close);    
+        }
+    }
+    localStorage.setItem("yy-gg-time", nowtime); 
+
+    var $ysGgFloat = $(".yw-gg-float");
+    $ysGgFloat.find(".yw-jump").prop("href", ywJumpUrl);
+    $ysGgFloat.find(".yw-close").on("click", function(){
+        close = "0";
+        localStorage.setItem("yy-gg-state", close);
+        $ysGgFloat.find(".yw-big-show").hide();
+        $ysGgFloat.find(".yw-small-show").show();
+    });
+    $ysGgFloat.find(".yw-small-show .yw-open").on("click", function(){
+        close = "1";
+        localStorage.setItem("yy-gg-state", close);
+        $ysGgFloat.find(".yw-big-show").show();
+        $ysGgFloat.find(".yw-small-show").hide();
+    });
+    
+    if(localStorage.getItem("yy-gg-state") == "0"){
+        $('.yw-big-show').hide();
+        $('.yw-small-show').show();
+    } else{
+        $('.yw-big-show').show();
+        $('.yw-small-show').hide();
+    }
+</script>
+</body>
+</html>
+ -->
+
+</body>
+</html>

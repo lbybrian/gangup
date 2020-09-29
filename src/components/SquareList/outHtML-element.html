@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				width: 100%;
+				overflow: inherit;
+			}
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				border: none 0;
+				font-family: "微软雅黑", "Hiragino Sans GB", tahoma, arial, "\5B8B\4F53";
+				-webkit-font-smoothing: antialiased;
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+			}
+			
+			.channel_list_nav {
+				display: flex;
+				align-items: center;
+				font-size: 14px;
+				color: #666;
+				font-weight: bold;
+				width: 730px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			
+			.nav_bottom_line {
+			    width: 730px;
+			    height: 9px;
+			    margin-bottom: 20px;
+			    margin-left: 40px;
+			    background: url(https://res.tuwan.com/templet/play/20191111/line.png);
+			}
+			
+			.list_content {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 730px;
+				margin: 0 auto;
+				margin-top: -20px;
+			}
+			
+			.channel_list_modal {
+				color: #666666;
+				font-size: 12px;
+				text-align: center;
+				line-height: 26px;
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				border: none 0;
+				font-family: "微软雅黑", "Hiragino Sans GB", tahoma, arial, "\5B8B\4F53";
+				-webkit-font-smoothing: antialiased;
+				box-sizing: content-box;
+				position: absolute;
+				top: 52px;
+				width: 790px;
+				right: -376px;
+				min-height: 265px;
+				background: url(https://res.tuwan.com/templet/play/2019nationalday/top_channel_list_bg.png?v=1);
+				background-size: 100% 100%;
+				z-index: 10000;
+				padding-bottom: 70px;
+				display: none;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="channel_list_modal" style="display: block;">
+			<div class="channel_list_nav">
+				<div style="margin-left:28px;">
+					<a href="https://y.tuwan.com/chatroom/1207" target="chatroom">LOL</a>
+				</div>
+				<div style="margin-left:133px;">
+					<a href="https://y.tuwan.com/chatroom/8513" target="chatroom">绝地</a>
+				</div>
+				<div style="margin-left:122px;">
+					<a href="https://y.tuwan.com/chatroom/10050" target="chatroom">综合</a>
+				</div>
+				<div style="margin-left:146px;">
+					<a href="https://y.tuwan.com/chatroom/4186" target="chatroom">手游</a>
+				</div>
+				<div style="margin-left:94px;">
+					<a href="https://y.tuwan.com/chatroom/2013" target="chatroom">娱乐</a>
+				</div>
+			</div>
+			<div class="nav_bottom_line"></div>
+			<div class="list_content">
+				<ul style="height:420px;">
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/1207">
+						<li style="color:#ff6691">LOL玉剑传说厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/3715">
+						<li style="color:">♡LOL比尔吉沃特厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/1900">
+						<li style="color:">云顶之弈开黑一厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8683">
+						<li style="color:#ff6691">♡LOL虚空之女厅♡（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6152">
+						<li style="color:#ff6691">♡LOL觅心女王厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8304">
+						<li style="color:">♡LOL甜心宝贝厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8499">
+						<li style="color:">LOL至尊魔女厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/304">
+						<li style="color:">LOL开黑一厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/7730">
+						<li style="color:">♡LOL蕉泥座人厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/4489">
+						<li style="color:">♡LOL魔法猫咪厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6812">
+						<li style="color:#ff6691">云顶梦游仙境厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/4187">
+						<li style="color:">♡LOL战争女神厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8528">
+						<li style="color:">LOL暗夜猫女厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/11276">
+						<li style="color:#ff6691">♡LOL电玩女神厅♡（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/3713">
+						<li style="color:">LOL黎明使者厅</li>
+					</a>
+					<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/1207">全部LOL</a>
+				</ul>
+				<ul style="height:420px;">
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8513">
+						<li style="color:">PUBG花魁厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10043">
+						<li style="color:">热心网友游戏厅（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/3707">
+						<li style="color:">绝地求生开黑四厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/881">
+						<li style="color:">♡PUBG绝地仙女厅♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8674">
+						<li style="color:">PUBG绝色佳人厅（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/527">
+						<li style="color:">绝地求生开黑一厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8742">
+						<li style="color:#ff6691">绝地花季少女厅(新)</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/5547">
+						<li style="color:">绝地Sixsixsix开黑厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10635">
+						<li style="color:#ff6691">༺๑童心๑༻PUBG开黑厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6098">
+						<li style="color:">绝地战争女神厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/2739">
+						<li style="color:">绝地求生开黑三厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8686">
+						<li style="color:">PUBG落地成盒厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/11281">
+						<li style="color:">绝地竞技开黑厅（试运营）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6627">
+						<li style="color:">测试奖励发放02</li>
+					</a>
+					<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/8513">全部绝地</a>
+				</ul>
+				<ul style="height:420px;">
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10050">
+						<li style="color:#ff6691">私人定制语游综合厅(新)</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8687">
+						<li style="color:#ff6691">绝色仙女游戏开黑厅（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8700">
+						<li style="color:#ff6691">国色天香游戏开黑厅(新)</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8693">
+						<li style="color:#ff6691">万妖女王自由开黑厅（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8949">
+						<li style="color:#ff6691">风华绝代游戏开黑厅（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8707">
+						<li style="color:#ff6691">炫舞小小爱神厅（新）</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6885">
+						<li style="color:#ff6691">ღ幼儿园综合游戏厅ღ</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/5315">
+						<li style="color:#ff6691">ღ梦之灵游戏开黑厅ღ</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6100">
+						<li style="color:#ff6691">FPS游戏官方开黑厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8500">
+						<li style="color:">炫舞甜心天使厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/2327">
+						<li style="color:">DNF天空之城</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/1511">
+						<li style="color:">DNF云上长安</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/2015">
+						<li style="color:">DNF战灵天舞</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/3716">
+						<li style="color:">DNF月光酒馆</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/4335">
+						<li style="color:">邂逅综合游戏开黑厅（试运营）</li>
+					</a>
+					<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/10050">全部综合</a>
+				</ul>
+				<ul style="height:420px;">
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/4186">
+						<li style="color:">王者荣耀绝色战神厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/11277">
+						<li style="color:#ff6691">❦王者24Hの便利店❦</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10634">
+						<li style="color:#ff6691">和平精英国民女神厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10435">
+						<li style="color:#ff6691">♛QQ手游陌予厅♛</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10436">
+						<li style="color:#ff6691">王者荣耀北京厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6073">
+						<li style="color:#ff6691">手游一元点单①厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8705">
+						<li style="color:#ff6691">手游一元点单③厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10046">
+						<li style="color:#ff6691">王者荣耀娜可露露厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/5322">
+						<li style="color:">王者荣耀百里桃花厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6755">
+						<li style="color:">云顶手游开黑一厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8311">
+						<li style="color:">和平精英大吉大利厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8688">
+						<li style="color:">和平精英魔芋方舟厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/2735">
+						<li style="color:">❦王者荣耀开黑一厅❦</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/1234">
+						<li style="color:">王者荣耀遇见神鹿厅</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8310">
+						<li style="color:">王者荣耀欢乐开黑厅</li>
+					</a>
+					<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/4186">全部手游</a>
+				</ul>
+				<ul style="height:420px;border:none">
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/2013" style="z-index:10">
+						<li style="color:">岁月英才私立ღ</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10440" style="z-index:10">
+						<li style="color:#ff6691">瓜瓜☆暗夜精灵☾</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/5551" style="z-index:10">
+						<li style="color:">瓜瓜点唱∮1998ツ</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8519" style="z-index:10">
+						<li style="color:">✧瓜瓜の倚月听雪楼✧</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/4481" style="z-index:10">
+						<li style="color:">瓜瓜的秘密基地</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8698" style="z-index:10">
+						<li style="color:#ff6691">瓜瓜ღ微夏蜜语馆</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/10047" style="z-index:10">
+						<li style="color:#ff6691">瓜瓜ღ旋转木马</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8680" style="z-index:10">
+						<li style="color:#ff6691">ฅ瓜瓜の猫耳铃铛居酒屋ฅ</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8681" style="z-index:10">
+						<li style="color:">瓜瓜ღ唯野呐之声</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8301" style="z-index:10">
+						<li style="color:">♡瓜瓜の睡意魔法研究所♡</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/6101" style="z-index:10">
+						<li style="color:">瓜瓜ღ星恋少女</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8306" style="z-index:10">
+						<li style="color:">瓜瓜✿忘忧阁✿</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8676" style="z-index:10">
+						<li style="color:">瓜瓜点唱极致の名门唱将</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/8699" style="z-index:10">
+						<li style="color:#ff6691">♦瓜瓜の执事女仆咖啡厅♦</li>
+					</a>
+					<a class="channel_item" target="_blank" href="https://y.tuwan.com/chatroom/4615" style="z-index:10">
+						<li style="color:">再见前任情感传达</li>
+					</a>
+					<a class="all_btn_item" target="_blank" href="https://y.tuwan.com/chatroom/2013">全部娱乐</a>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
