@@ -6,29 +6,29 @@
         <el-menu >
           <el-menu-item index="/" class="logomenu">
             <template>
-              <span style="color: #47AFAE; font-size: 16px">安全审计系统</span>
+              <span style="color: #47AFAE; font-size: 16px">立即回收系统</span>
             </template>
           </el-menu-item>
 
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-s-data"></i>
-              <span slot="title">审计管理</span>
+              <span slot="title">垃圾管理</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/audit">审计分析</el-menu-item>
-              <el-menu-item index="/rule">规则管理</el-menu-item>
-              <el-menu-item index="/alarm">告警管理</el-menu-item>
+              <el-menu-item index="/audit">垃圾分类</el-menu-item>
+              <el-menu-item index="/rule">垃圾管理</el-menu-item>
+              <el-menu-item index="/alarm">分类管理</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-notebook-1"></i>
-              <span slot="title">日志管理</span>
+              <span slot="title">垃圾日志</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/log">日志查询</el-menu-item>
+              <el-menu-item index="/log">立即查询</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
