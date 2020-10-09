@@ -20,6 +20,9 @@ const router = new VueRouter({
   base: process.env.BASE_URL,//公共地址前缀，默认为/
 //base: "/hehe",//公共地址前缀，默认为/
   
+meta:{
+	isAuthorization:"kk"
+},
   routes:[
 //	nav,
   	home,

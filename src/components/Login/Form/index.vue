@@ -4,7 +4,6 @@
 	<!--账号：<input type="text" name="" value="111111111" /><br /><br />
 	密码：<input type="text" name="" value="111111111" /><br /><br />
 	验证码：<input type="text" name="" value="111111111" /><br /><br />-->
-	
 	<div class="register_box">
         <div class="register">
             <label> 账号</label>
@@ -27,7 +26,7 @@
 		<div class="pl_left"><input type="checkbox" name="" value="下次自动登录" />下次自动登录</div>
 		<div class="pl_right"><a href="##javascript">忘记密码</a></div>
 	</div><br /><br /><hr />
-	<input class="btn" type="button" name="" :value='this.valueTitle' :valueTitle="valueTitle" @click="gohome()"/>{{aaa}}{{bbb}}
+	<input class="btn" type="button" name="" :value='this.valueTitle' :valueTitle="valueTitle" @click="gohome"/>{{aaa}}{{bbb}}
 <!--</form>-->
 </div>
 </template>
@@ -55,12 +54,13 @@
         console.log('submit!');
       },
       gohome(){
-//    	this.$router.push({
-//          path: '/pay'
-//        })
-		console.log(this.$route.isAuthorization)
+		  // const that = this;
+   	// this.$router.push({
+    //      path: '/pay'
+    //    })
+		console.log(11111111111,this.$route.meta.isAuthorization)
 //		this.$route.isAuthorization=false;
-      }
+      },
     },
     created(){
     	this.valueTitle=this.bbb;

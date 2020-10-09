@@ -116,7 +116,7 @@
 		methods:{
 			//模拟登陆
 			csLogin(){
-				
+				console.log()
 			},
 //			displayNone(){
 //				this.$refs.enterForm;
@@ -125,6 +125,7 @@
 			goAhead(){
 //				window.history.go(-1)
 				this.$router.go(-1)
+//				this.$router.push({path:'/pay'})
 			}
 		}
 	}
