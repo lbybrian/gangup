@@ -35,7 +35,6 @@
         </el-menu>
       </el-aside>
 
-      <el-container>
         <el-header>
           <el-row :gutter="20">
             <el-col :span="1">
@@ -65,10 +64,9 @@
             <!--<router-view></router-view>-->
           </transition>
         </el-main>
-      </el-container>
       
       
-      	<div class="dateRange">
+      	<!--<div class="dateRange">
             <el-date-picker
               v-model="dengyouTimeValue"
               type="daterange"
@@ -79,12 +77,26 @@
               end-placeholder="结束日期"
               :picker-options="dengyou_pickerOptions"
             ></el-date-picker>
-		</div>
+		</div>-->
 
     </el-container>
 	</div>
 </template>
-<style scoped >
+
+<script>
+	export default {
+	  name: 'Player',
+	  data () {
+	    return {}
+	  },
+	  created () {},
+	  mounted () {},
+	  components: {},
+	  methods: {}
+	}
+</script>
+
+<style>
 	.ele /deep/ .el-aside{
 		color: ;
 		background-color: yellow;
@@ -123,18 +135,6 @@
   background: #01131b;
 }
 </style>
-<script>
-	export default {
-  name: 'player',
-  components: {},
-  data () {
-    return {}
-  },
-  created () {},
-  mounted () {
-  },
-  methods: {}
-}
-</script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

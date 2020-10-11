@@ -40,11 +40,12 @@
 						<el-aside width="200px">
 							<div class="fr entry_wbox mt50">
 								<div class="entry_01">第三方账号登录</div>
-								<a class="Wechat" href="https://user.tuwan.com/api/url.ashx?app=weixin&amp;redirect_uri=https%3A%2F%2Fy.tuwan.com%2F%3Fsuccess%3D1">
-									<div class="entry_w">
+								<!--<a class="Wechat" href="https://user.tuwan.com/api/url.ashx?app=weixin&amp;redirect_uri=https%3A%2F%2Fy.tuwan.com%2F%3Fsuccess%3D1">-->
+									<div class="entry_w" >
+										<input type="button" value="点啊" @click="csLogin(true)" />
 										<img src="https://res.tuwan.com/templet/teach/index/images/entry_w.png">&nbsp;微信账号登录
 									</div>
-								</a>
+								<!--</a>-->
 								<a class="QQ" href="https://user.tuwan.com/api/url.ashx?app=qq&amp;redirect_uri=https%3A%2F%2Fy.tuwan.com%2F%3Fsuccess%3D1">
 									<div class="entry_qq">
 										<img src="https://res.tuwan.com/templet/teach/index/images/entry_qq.png">&nbsp;QQ账号登录
@@ -111,12 +112,17 @@
 		mounted(){
 			this.$on("one",function () {
                 console.log("子组件")
-            })
+           });
+			this.csLogin(false)
 		},
 		methods:{
 			//模拟登陆
-			csLogin(){
-				console.log()
+			csLogin(bol){
+//				this.$router.push({
+//					path:'/pay'
+//				})
+				this.$route.meta.isAuthorization=bol
+				console.log(11111111111,this.$route.meta)
 			},
 //			displayNone(){
 //				this.$refs.enterForm;

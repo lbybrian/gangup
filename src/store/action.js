@@ -12,8 +12,8 @@ const actions = {
 //	},
 
 //登录
-adminLogin(){
-	
+adminLogin({commit}){
+	return commit('ADMIN_LOGIN')
 },
 	//获取指定集合数据
 	getDbUser(){

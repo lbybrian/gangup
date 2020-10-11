@@ -45,8 +45,7 @@
     login (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-//      	this.$store.dispatch('adminLogin')
-        	this.$router.push({
+          this.$router.push({
             path: '/pay'
           })
         }

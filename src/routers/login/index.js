@@ -2,7 +2,7 @@ export default {
     path : '/login',
 //  component : () => import('@/components/Login/LoginRouter'),//测试登录
     component : () => import('@/components/Login'),
-    redirect:'/login/enter',
+    redirect:'/login/sign',
     meta:{
     	isAuthorization:false
     },

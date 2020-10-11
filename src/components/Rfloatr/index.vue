@@ -1,5 +1,6 @@
 <template>
-	<div class="right-float" v-if="!$route.meta.isShow" >
+	<div class="right-float">
+	<!--<div class="right-float" v-if="!$route.meta.isShow" >-->
 	    <div @click="show">
 	        <img src="https://res.tuwan.com/templet/play/public/rightfloat/images/float_head.png?v=1" style="width:66px;">
 	    </div>

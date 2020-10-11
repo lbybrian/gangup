@@ -3,7 +3,7 @@ export default{
 	name:'chatroom',
 	component:()=>import('@/components/Chatroom'),
 	meta:{
-		isShow:true
+		isShow:true//隐藏header和footer
 	}
 }
 //export default{

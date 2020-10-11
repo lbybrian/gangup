@@ -4,9 +4,10 @@
 		<hr />
 		<br />
 		<br />
+		<!--<input type="button" value="儿很" @click="csLogin()" />-->
 		<!--<ex />-->
 		<!--<p>{{btnValue}}1111111111111111111{{aaa}}</p>-->
-		<Form :aaa="aaa" :bbb="bbb" />
+		<Form :aaa="aaa" :bbb="bbb" v-bind="$props" />
 	</div>
 </template>
 
@@ -21,7 +22,7 @@
 			}
 			
 		},
-		props:["btnValue","signValue"],
+		props:["btnValue","signValue","csLogin"],
 		components:{
 			Form:()=>import ('../Form'),
 			ex:()=>import ('./ex'),
@@ -35,7 +36,13 @@
 //				this.$router.go(-1)
 //				this.go(-1)
 				go(-1)
-			}
+				
+			},
+//			csLogin(){
+//				this.$router.push({
+//					path:'./pay'
+//				})
+//			}
 		}
 	}
 </script>

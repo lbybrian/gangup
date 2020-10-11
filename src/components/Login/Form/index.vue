@@ -48,7 +48,7 @@
         }
       }
     },
-    props:["btnValue","signValue","aaa","bbb"],
+    props:["btnValue","signValue","aaa","bbb","csLogin"],
     methods: {
       onSubmit() {
         console.log('submit!');
@@ -58,7 +58,7 @@
    	// this.$router.push({
     //      path: '/pay'
     //    })
-		console.log(11111111111,this.$route.meta.isAuthorization)
+		console.log(11111111111,this.$route.meta.isAuthorization,22222222222,this.$props)
 //		this.$route.isAuthorization=false;
       },
     },

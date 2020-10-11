@@ -1,4 +1,5 @@
 import state from './state'
+//import Vue from 'vue'
 
 const mutations = {
 	
@@ -15,7 +16,12 @@ const mutations = {
 	CHANGE_DATA(){
 		state.name='外部改变data'
 	},
-	
+//	ADMIN_LOGIN(){
+//		let that=Vue;
+//        that.$router.push({
+//          path: '/'
+//        })
+//      }
 
 }
 export default mutations
