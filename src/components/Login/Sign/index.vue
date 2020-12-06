@@ -40,15 +40,17 @@
 
     }
   },
-  created () {},
+  created () {console.log(this.$route.meta.isAuthorization)},
   methods: {
     login (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
 //      	this.$store.dispatch('adminLogin')
-        	this.$router.push({
-            path: '/pay'
-          })
+//      	this.$router.push({
+//          path: '/pay'
+//        })
+this.$route.meta.isAuthorization=true
+			console.log(this.$route.meta.isAuthorization)
         }
       })
     },

@@ -51,6 +51,9 @@ meta:{
 //	if(to.meta.isAuthorization){
 //		next('/login')
 //	}
+//	else if(!to.meta.isAuthorization){
+//		next('/pay')
+//	}
 //	else{
 //		next()
 //	}

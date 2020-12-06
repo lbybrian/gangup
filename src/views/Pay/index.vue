@@ -4,7 +4,7 @@
 		<!--<el-container direction="vertical">-->
 			<el-header>
 				<h2>账户充值系统
-					<input type="button" value="管理" @click=""/>
+					<input type="button" value="管理" @click="goChange"/>
 				</h2>
 			</el-header>
 			<el-container>
@@ -18,6 +18,8 @@
 					</ul>-->
 					<router-link tag='div' to="/pay/edit">账户管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
+					<router-link tag='div' to="/pay/jsdom">原生JS</router-link>
+					<!--<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
@@ -25,16 +27,14 @@
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
-					<router-link tag='div' to="/pay/message">消息管理</router-link>
-					<router-link tag='div' to="/pay/message">消息管理</router-link>
-					<router-link tag='div' to="/pay/message">消息管理</router-link>
+					<router-link tag='div' to="/pay/message">消息管理</router-link>-->
 				
 				</el-aside>
 				<el-main>
+					<Change v-if="showChange"/>
 					<keep-alive>
 				        <router-view/>
 				    </keep-alive>
-		<Change/>
 				</el-main>
 			</el-container>
 		</el-container>
@@ -47,12 +47,16 @@
 	export default {
 		name: 'Pay',
 		data(){
-			return {}
+			return {
+				showChange:false
+			}
 		},
 		components:{
 			Change
 		},
 		created(){
+				this.showChange=false
+			
 			//按下回车执行按钮点击事件
 			let _this = this;
 			document.onkeydown=(e)=>{
@@ -78,7 +82,15 @@
 		},
 		mounted(){},
 		activated(){},
-		methods:{}
+		methods:{
+			goChange(){
+				this.showChange=true
+			}
+		},
+		beforeDestroy(){
+				this.showChange=false
+			console.log(333333333333333333333,this.showChange)
+		}
 	}
 </script>
 

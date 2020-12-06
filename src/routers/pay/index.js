@@ -4,6 +4,7 @@ export default {
 	meta:{
 	    isAuthorization:true,
 	},
+	redirect:'/pay/message',
     children:[
 	    {
 	    	path:'edit',
@@ -12,6 +13,10 @@ export default {
 	    {
 	    	path:'message',
 	    	component:()=>import('@/views/Pay/Message')
-	    }
+	    },
+	    {
+	    	path:'jsdom',
+	    	component:()=>import('@/views/Pay/JsDom')
+	    },
     ]
 }
