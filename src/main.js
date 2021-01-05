@@ -17,6 +17,9 @@ Vue.prototype.$axios = axios;
 
 //import jquery from 'jquery';
 
+//引入公共样式
+import './assets/css/global.css'
+
 Vue.use(filter);
 //Object.keys(filter).forEach(key=>{
 //	Vue.filter(key,filter[key])

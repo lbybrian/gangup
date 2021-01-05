@@ -1,6 +1,9 @@
 const filters = {
 	imgUrl(v){
 		return "http://www.lgstatic.com/"+v;
+	},
+	moneyRMB(v){
+		return '¥'+v
 	}
 }
 export default{

@@ -1,0 +1,10 @@
+.el-button{
+	/*background: red!important;*/
+		padding: 5px!important;
+		font-weight: 500!important;
+		width: 20px!important;
+		height: 20px!important;
+		text-align: center!important;
+		line-height: 0px!important;
+		vertical-align: middle!important;
+	}

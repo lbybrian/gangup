@@ -18,5 +18,13 @@ export default {
 	    	path:'jsdom',
 	    	component:()=>import('@/views/Pay/JsDom')
 	    },
+	    {
+	    	path:'shoppingTrolley',
+	    	component:()=>import('@/views/Pay/ShoppingTrolley')
+	    },
+	    {
+	    	path:'shuttle',//穿梭框
+	    	component:()=>import('@/views/Pay/Shuttle')
+	    },
     ]
 }

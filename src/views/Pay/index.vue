@@ -4,7 +4,8 @@
 		<!--<el-container direction="vertical">-->
 			<el-header>
 				<h2>账户充值系统
-					<input type="button" value="管理" @click="goChange"/>
+					<input type="button" value="显示Change组件" @click="goChange"/>
+					<!--<input type="button" value="管理" @click="goRouterChange"/><br />-->
 				</h2>
 			</el-header>
 			<el-container>
@@ -19,8 +20,9 @@
 					<router-link tag='div' to="/pay/edit">账户管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/jsdom">原生JS</router-link>
+					<router-link tag='div' to="/pay/shuttle">模拟购物车1</router-link>
+					<router-link tag='div' to="/pay/shoppingTrolley">宝贝管理</router-link>
 					<!--<router-link tag='div' to="/pay/message">消息管理</router-link>
-					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
 					<router-link tag='div' to="/pay/message">消息管理</router-link>
@@ -84,7 +86,11 @@
 		activated(){},
 		methods:{
 			goChange(){
-				this.showChange=true
+//				this.showChange=true
+				this.showChange=!this.showChange
+			},
+			goRouterChange(){
+				this.$router.push({path:'/pay/change'})
 			}
 		},
 		beforeDestroy(){
