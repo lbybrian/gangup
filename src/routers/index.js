@@ -38,7 +38,7 @@ meta:{
   	zlinscs,
   	{
     path: "/*",
-    redirect: "home"
+    redirect: "player"
   },
 //{
 //  path: "/home/*",/无意义
