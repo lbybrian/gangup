@@ -1,7 +1,12 @@
 export default {
     path : '/player',
     component : () => import('@/views/Player'),
+	redirect:'/player/checkbox',
     children: [
+	{
+		path: "checkbox",
+		component: ()=> import("@/components/Ggzj/checkbox"),
+	}, 
     {
     	path: "formInfo",
         component: ()=> import("@/components/Ggzj/formInfo"),

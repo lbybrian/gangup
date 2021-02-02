@@ -33,7 +33,7 @@
               <span slot="title">THIS</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/log">立即查询</el-menu-item>
+              <el-menu-item index="/log">checkbox</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           
