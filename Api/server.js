@@ -1,6 +1,7 @@
 const express =require('express')
 const app = express()
 const request =require('request')
+const fs = require('fs')
 const path = require('path')
 app.use(express.static(path.resolve(__dirname,'../')))//将gangup设为根路径
 //console.log(path.resolve(__dirname,'../'))
@@ -19,6 +20,18 @@ app.all("*",function(req,res,next){
 		let date = new Date();
 		return date.getFullYear().toString().padStart(2,'0')+'-'+(date.getMonth()+1).toString().padStart(2,'0')+'-'+date.getDate().toString().padStart(2,'0')+' '+date.getHours().toString().padStart(2,'0')+':'+date.getMinutes().toString().padStart(2,'0')+':'+date.getSeconds().toString().padStart(2,'0')
 	}
+	
+	//获取本地json数据
+app.get("/shuihuname",function(req,res){
+	fs.readFile(__dirname+'/NAME.json',function(err,result){
+		console.log('KKKKKKKKKKK',result);
+		res.json({
+			ok:1,
+			mes:'只要JSON格式正确就行的',
+			names:JSON.parse(result)
+		})
+	})
+})
 	
 //入驻拉勾网接口
 app.get("/lagougou",function(req,res){
