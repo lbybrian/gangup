@@ -8,6 +8,7 @@ import filter from '@/filters';
 import ElementUi from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+Vue.use(ElementUi);
 import echarts from 'echarts';//全局引入
 Vue.prototype.$echarts = echarts;// 这种方法是直接绑定在vue实例上，所以在项目中任何页面，直接 this.$echarts 即可
 
@@ -31,7 +32,6 @@ Vue.prototype.$bus=bus;
 
 Vue.config.productionTip = false;
 
-Vue.use(ElementUi);
 new Vue({
   router,
   store,

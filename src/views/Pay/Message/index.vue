@@ -78,7 +78,7 @@
 			
 			SetDatas(){
 				this.$axios.get('http://127.0.0.1:8090/getdbs').then(({data})=>{
-//					console.log(data,11111111111111111111,JSON.stringify(data.allDatas))
+					// console.log(data,11111111111111111111,JSON.stringify(data.allDatas))
 					window.localStorage.setItem('dbdatas',JSON.stringify(data.allDatas))
 					this.alls=data.allDatas;
 				})

@@ -6,14 +6,14 @@
     </div>
     
     <div id="menu">
-      <!--<Rfloatr />-->
+      <Rfloatr />
 	    <keep-alive>
 	        <router-view/>
 	    </keep-alive>
     </div>
     
     <div id="bottom_box">
-    	<!--<Footer />-->
+    	<Footer />
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@
 		data(){//备注：这里不可以对象形式data。其中引用的地址不能是绝对地址
 			return{
 				bg:{
-//					backgroundImage:"url("+require('../public/static/imgs/bg.jpg')+")",
+					backgroundImage:"url("+require('../public/static/imgs/bg.jpg')+")",
 					backgroundSize: "100%,100%",
 					backgroundRepeat: "round",
 				}
@@ -52,6 +52,10 @@
   /*background-image: url("./assets/bg.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;*/
+}
+#nav{
+	/*width: 100%;*/
+	margin-bottom: 100px;
 }
 #menu{
 	min-height: 100vh;

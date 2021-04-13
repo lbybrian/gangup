@@ -3,8 +3,32 @@
 		<div class="main_box">
 			<h2>孙组件：</h2>
 			<!--{{alls}}-->
-			{{$props}}
+			<!--{{$props}}-->
+			<el-table :data='mainlist'>
+				<el-table-column type="selection" width="80"></el-table-column>
+				<el-table-column type="index" width="80" label="序号"></el-table-column>
+				<el-table-column prop="content" label="数据内容">
+		          <template slot-scope="scope">
+		            <div class="">{{scope.row.content}}</div>
+		          </template>
+		        </el-table-column>
+		        <el-table-column prop="time" label="时间">
+		          <template slot-scope="scope">{{scope.row.time}}</template>
+		        </el-table-column>
+			</el-table>
 		</div>
+		<!--分页-->
+	    <!--<div class="page center" v-if="total>0">
+	      <el-pagination
+	        @size-change=""
+	        @current-change=""
+	        :current-page="currentPage"
+	        :page-sizes="[10, 20, 50, 100]"
+	        :page-size="pageSize"
+	        layout="total, sizes, prev, pager, next, jumper"
+	        :total="total">
+	      </el-pagination>
+	    </div>-->
 	</div>
 </template>
 <script>
@@ -81,7 +105,7 @@
 //								this.mainlist.push(datas[i])
 //							}
 //						}
-//						console.log(data,this.mainlist)
+						console.log(333333333333333333,data,this.mainlist)
 					})
 			},
 			async deleteOne(id){

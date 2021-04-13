@@ -11,7 +11,9 @@ import square from "./square";
 import login from "./login";
 import chatroom from "./chatroom";
 import zlinscs from "./zlinscs";
+import rollingimg from "./rollingimg";
 //import nav from "./nav";
+
 
 Vue.use(VueRouter);
 
@@ -20,9 +22,9 @@ const router = new VueRouter({
   base: process.env.BASE_URL,//公共地址前缀，默认为/
 //base: "/hehe",//公共地址前缀，默认为/
   
-meta:{
-	isAuthorization:"kk"
-},
+//meta:{
+//	isAuthorization:"kk"
+//},
   routes:[
 //	nav,
   	home,
@@ -36,9 +38,10 @@ meta:{
   	login,
   	chatroom,
   	zlinscs,
+  	rollingimg,
   	{
     path: "/*",
-    redirect: "player"
+    redirect: "home"
   },
 //{
 //  path: "/home/*",/无意义

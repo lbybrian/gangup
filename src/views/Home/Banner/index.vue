@@ -3,7 +3,7 @@
 		<div id="banner_body" class="banner_bg">
 			<!--//轮播图-->
 			<div class="banner_main">
-				<!--<Rollingimg />-->
+				<Rollingimg />
 				<!--导航链接栏-->
 				<div class="banner_date">
 					<div style="margin-top: 30px;">
@@ -109,6 +109,7 @@
 	#banner_body {
 		width: 100%;
 		height: 496px;
+		margin-top: 100px;
 		/*overflow: hidden;*/
 		/*background-image: url();*/
 		/*background-color: red;*/
