@@ -24,7 +24,7 @@ app.all("*",function(req,res,next){
 	//获取本地json数据
 app.get("/shuihuname",function(req,res){
 	fs.readFile(__dirname+'/NAME.json',function(err,result){
-		console.log('KKKKKKKKKKK',result);
+//		console.log('KKKKKKKKKKK',result);
 		res.json({
 			ok:1,
 			mes:'只要JSON格式正确就行的',
@@ -32,6 +32,101 @@ app.get("/shuihuname",function(req,res){
 		})
 	})
 })
+//	//获取本地图片数据1
+//app.get("/getimgslist",function(req,res){
+//	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
+//	//console.log(imageDataToBase64)
+//	fs.readFile(imagePath,function(err,result){
+//		let imageData = fs.readFileSync(imagePath)
+//		let imageDataToBase64 = imageData.toString('base64');// 转成 base64
+////		console.log('KKKKKKKKKKK',result);
+//		res.json({
+//			ok:1,
+//			mes:'success',
+//			imgslist:imageDataToBase64
+//		})
+//	})
+//})
+	//获取本地图片数据2
+app.get("/getimgslist",function(req,res){
+	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
+	//console.log(imageDataToBase64)
+	fs.readFile(imagePath,function(err,result){
+//		console.log('KKKKKKKKKKK',result);
+	//获取项目工程里的图片
+var image = require("imageinfo"); //引用imageinfo模块
+function readFileList(path, filesList) {
+ var files = fs.readdirSync(path);
+ files.forEach(function (itm, index) {
+  var stat = fs.statSync(path + itm);
+  if (stat.isDirectory()) {
+   //递归读取文件
+   readFileList(path + itm + "/", filesList)
+  } else {
+   var obj = {};//定义一个对象存放文件的路径和名字
+   obj.path = path;//路径
+   obj.filename = itm//名字
+   filesList.push(obj);
+  }
+ })
+}
+var getFiles = {
+ //获取文件夹下的所有文件
+ getFileList: function (path) {
+  var filesList = [];
+  readFileList(path, filesList);
+  return filesList;
+ },
+ //获取文件夹下的所有图片
+ getImageFiles: function (path) {
+  var imageList = [];
+  this.getFileList(path).forEach((item) => {
+   var ms = image(fs.readFileSync(item.path + item.filename));
+   ms.mimeType && (imageList.push(item.filename))
+  });
+  return imageList;
+ }
+};
+//获取文件夹下的所有图片
+var srclist=getFiles.getImageFiles(__dirname+'../../'+'static/imgs/108/');
+var srcNewList=[];
+//console.log(srclist);
+srclist.forEach(function (item, index){
+// console.log(item);
+ if(item.split(".")[1]=='jpg'){
+  srcNewList.push({'imsrc':item})
+ }else{
+  srcNewList.push({'videosrc':item})
+ }
+})
+//console.log(srcNewList)
+		res.json({
+			ok:1,
+			mes:'success',
+			imgslist:srcNewList
+		})
+	})
+})
+	
+	
+	
+	
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 //入驻拉勾网接口
 app.get("/lagougou",function(req,res){

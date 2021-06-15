@@ -7,6 +7,8 @@ import store from '@/store';
 import filter from '@/filters';
 import ElementUi from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import * as Tools  from '@/js/Tools'
+
 
 Vue.use(ElementUi);
 import echarts from 'echarts';//全局引入
@@ -17,7 +19,7 @@ Vue.prototype.$axios = axios;
 //import {layui,layuicss} from 'layui-src';
 
 //import jquery from 'jquery';
-
+Vue.prototype.$tools = Tools;
 //引入公共样式
 import './assets/css/global.css'
 
@@ -40,5 +42,6 @@ new Vue({
   // ElementUi,
 //jquery,
 //$,
+//Tools,
   render: h => h(App)
 }).$mount('#app');
