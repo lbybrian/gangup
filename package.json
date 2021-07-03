@@ -9,7 +9,7 @@
   "dependencies": {
     "@antv/g2plot": "^2.3.8",
     "@mapbox/mapbox-gl-language": "^0.10.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
     "echarts": "^5.1.1",
