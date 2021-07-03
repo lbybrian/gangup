@@ -1,8 +1,8 @@
 <template>
 <!--  <div id="app" >-->
-  <div id="app" :style="bg">
+  <div id="app" :style="{'background-color':bg.backgroundColor[0]}" >
     <div id="nav">
-      <Header />
+      <Header :changeColor="changeColor" />
     </div>
     
     <div id="menu">
@@ -26,18 +26,35 @@
 		
 		data(){//备注：这里不可以对象形式data。其中引用的地址不能是绝对地址
 			return{
+				index:0,
 				bg:{
-					backgroundImage:"url("+require('../public/static/imgs/bg.jpg')+")",
-					backgroundSize: "100%,100%",
-					backgroundRepeat: "round",
+//					backgroundImage:"url("+require('../public/static/imgs/bg.jpg')+")",
+//					backgroundSize: "100%,100%",
+//					backgroundRepeat: "round",
+//						backgroundColor:['skyblue','pink','yellow','#2ac9b3','orange','8c2ac9']
+						backgroundColor:['rgba(255,255,255,0%)']
 				}
-			
+			}
+		},
+		watch:{
+			'bg.backgroundColor'(newi,oldi){
+//				console.log(newi,oldi)
+				this.bg.backgroundColor=newi
 			}
 		},
 		components:{
 			Header,
 			Footer,
 			Rfloatr
+		},
+		methods:{
+			changeColor(){
+					this.bg.backgroundColor.splice(0,1);
+					if(this.bg.backgroundColor.length<=1){
+						this.bg.backgroundColor=['skyblue','#65c5ec','#0faaea','#29f8a7','#31f829','8c2ac9','pink','#eb87a0','#ee5178','#ecec6f','yellow','orange','#663399','#2ac9b3','white']
+					}
+					console.log(this.bg.backgroundColor[0],this.bg.backgroundColor.length)
+			}
 		}
 	};
 </script>

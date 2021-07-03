@@ -1,8 +1,13 @@
 <template>
 	<div>
-      <Banner />
+		<!--初级banner-->
+      <!--<Banner />-->
+      
       <!--<roter-view />-->
       <!--<Backtop/>-->
+      
+      <!--高大尚版-->
+      <Banner />
 	</div>
     
      

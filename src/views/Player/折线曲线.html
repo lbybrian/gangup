@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>曲线折线并存图</title>
+    <style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+ 
+    html,
+    body {
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+    }
+    .m-many-lines {
+        margin: 100px 0 0 100px;
+        width: 340px;
+        height: 100px;
+    }
+    </style>
+</head>
+ 
+<body>
+    <div id="mountNode" class="m-many-lines"></div>
+    <script>
+    /*Fixing iframe window.innerHeight 0 issue in Safari*/
+    document.body.clientHeight;
+    </script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.3.1/dist/g2.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.9.6/dist/data-set.min.js"></script>
+    <script>
+    var data = [];
+    for (var i = 0; i < 12; i++) {
+        var temp = {};
+        var num = Math.random() * 20 + 70;
+        temp.time = i;
+        temp.num = num;
+        temp.value1 = Math.random() * 50 + 20;
+        temp.value2 = Math.random() * 50 + 20;
+        temp.value3 = Math.random() * 50 + 20;
+        temp.value4 = Math.random() * 50 + 20;
+        temp.value5 = Math.random() * 50 + 20;
+        temp.value6 = Math.random() * 50 + 20;
+        temp.value7 = Math.random() * 50 + 20;
+        temp.value8 = Math.random() * 50 + 20;
+        data.push(temp);
+    }
+    var ds = new DataSet();
+    var dv = ds.createView().source(data);
+    dv.transform({
+        type: 'fold',
+        fields: ['value1', 'value2', 'value3', 'value4', 'value5', 'value6', 'value7', 'value8'], // 展开字段集
+        key: 'myType',
+        value: 'myValue'
+    });
+    var chart = new G2.Chart({
+        container: 'mountNode',
+        forceFit: true,
+        padding: [0, -27, 0, 5],
+        width: 340,
+        height: 100   
+    });
+    chart.source(dv, {
+        time: {
+            range: [0, 1]
+        },
+        myValue: {
+            min: 0,
+            max: 100
+        },
+        num: {
+            min: 0,
+            max: 100
+        }
+    });
+    chart.tooltip({
+        crosshairs: {
+            type: 'y',
+            //fill: 'line',
+            style: {
+                fill: '#ffff00',
+                stroke: '#ff0000',
+                lineWidth: 5,
+                lineDash: [ 0, 2, 2 ]
+            }
+        }
+    });
+    chart.axis('myValue', {
+        label: null
+    });
+    chart.axis('time', {
+        label:null,
+        subTickCount: 3,
+        subTickLine: {
+            length: -2,
+            stroke: '#3A3A3A',
+            lineWidth: 1
+        },
+        tickLine: {
+            length: -2,
+            lineWidth: 1,
+            stroke: '#3A3A3A'
+        } 
+    });
+    chart.legend(false);
+    var color = ['#5AA8D8', '#825738', '#7F7D4C', '#354C8D', '#60714B', '#4A4168', '#515B62', '#803128', '#41677F'];
+    
+    chart.line().position('time*num')
+    chart.line().position('time*myValue').color('myType', color)
+        .shape('myType', (type) => {
+            if (type === 'num') {
+                return 'line';
+            }
+            return 'smooth';
+        })
+        .size('myType', (type) => {
+            if (type === 'num') {
+                return 2;
+            }
+            return 1;
+        }).tooltip(false);
+    chart.render();
+    </script>
+</body>
+ 
+</html>

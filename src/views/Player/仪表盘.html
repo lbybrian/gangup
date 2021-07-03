@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+    <style>
+      html {
+          background-color: #333;
+          text-align: center;
+          padding-top: 50px;
+      }
+      .dial {
+          display: inline-block;
+          position: relative;
+          width: 300px;
+          height: 300px;
+          background-color: #222;
+          box-shadow: inset 0px 0px 10px #000, 0px 0px 10px #222;
+          border: 10px solid #222;
+          border-radius: 50%;
+      }
+      .tick {
+          width: 40px;
+          height: 2px;
+          background-color: #aaa;
+          position: absolute;
+          left: calc(20% - 50px);
+          top: 50%;
+          transform-origin: 350%;
+          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      }
+      .tick-2 {
+          transform: rotate(16.36deg);
+      }
+      .tick-3 {
+          transform: rotate(32.72deg);
+      }
+      .tick-4 {
+          transform: rotate(49.08deg);
+      }
+      .tick-5 {
+          transform: rotate(65.44deg);
+      }
+      .tick-6 {
+          transform: rotate(81.8deg);
+      }
+      .tick-7 {
+          transform: rotate(98.16deg);
+      }
+      .tick-8 {
+          transform: rotate(114.52deg);
+      }
+      .tick-9 {
+          transform: rotate(130.88deg);
+      }
+      .tick-10 {
+          transform: rotate(147.24deg);
+      }
+      .tick-11 {
+          transform: rotate(163.6deg);
+      }
+      .tick-12 {
+          transform: rotate(179.95999999999998deg);
+      }
+      .tick-bottom {
+          background-color: rgba(1, 1, 1, 0.2);
+          width: 100%;
+          left: 0;
+          margin-top: 10px;
+          box-shadow: none;
+      }
+      .hand {
+          width: 100px;
+          left: calc(50% - 140px);
+          background-color: #f00;
+          transform-origin: 140%;
+          transform: rotate(0deg);
+          box-shadow: 0px 0px 10px #f00;
+          animation: dialSpin 2s forwards;
+      }
+      .pivot {
+          position: absolute;
+          height: 40px;
+          width: 40px;
+          background-color: #222;
+          border-radius: 50%;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+          left: calc(50% - 20px);
+          top: calc(50% - 20px);
+      }
+      .pivot .pivot__inner {
+          height: 25px;
+          width: 25px;
+          border: 2px solid #999;
+          border-radius: 50%;
+          margin-top: 5px;
+          margin-left: 5px;
+          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      }
+      @-moz-keyframes dialSpin {
+          0% {
+              transform: rotate(0deg);
+          }
+          70% {
+              transform: rotate(170deg);
+          }
+          81% {
+              transform: rotate(190deg);
+          }
+          85% {
+              transform: rotate(175deg);
+          }
+          90% {
+              transform: rotate(185deg);
+          }
+          93% {
+              transform: rotate(175deg);
+          }
+          96% {
+              transform: rotate(185deg);
+          }
+          98% {
+              transform: rotate(175deg);
+          }
+          98% {
+              transform: rotate(185deg);
+          }
+          100% {
+              transform: rotate(180deg);
+          }
+      }
+      @-webkit-keyframes dialSpin {
+          0% {
+              transform: rotate(0deg);
+          }
+          70% {
+              transform: rotate(170deg);
+          }
+          81% {
+              transform: rotate(190deg);
+          }
+          85% {
+              transform: rotate(175deg);
+          }
+          90% {
+              transform: rotate(185deg);
+          }
+          93% {
+              transform: rotate(175deg);
+          }
+          96% {
+              transform: rotate(185deg);
+          }
+          98% {
+              transform: rotate(175deg);
+          }
+          98% {
+              transform: rotate(185deg);
+          }
+          100% {
+              transform: rotate(180deg);
+          }
+      }
+      @-o-keyframes dialSpin {
+          0% {
+              transform: rotate(0deg);
+          }
+          70% {
+              transform: rotate(170deg);
+          }
+          81% {
+              transform: rotate(190deg);
+          }
+          85% {
+              transform: rotate(175deg);
+          }
+          90% {
+              transform: rotate(185deg);
+          }
+          93% {
+              transform: rotate(175deg);
+          }
+          96% {
+              transform: rotate(185deg);
+          }
+          98% {
+              transform: rotate(175deg);
+          }
+          98% {
+              transform: rotate(185deg);
+          }
+          100% {
+              transform: rotate(180deg);
+          }
+      }
+      @keyframes dialSpin {
+          0% {
+              transform: rotate(0deg);
+          }
+          70% {
+              transform: rotate(170deg);
+          }
+          81% {
+              transform: rotate(190deg);
+          }
+          85% {
+              transform: rotate(175deg);
+          }
+          90% {
+              transform: rotate(185deg);
+          }
+          93% {
+              transform: rotate(175deg);
+          }
+          96% {
+              transform: rotate(185deg);
+          }
+          98% {
+              transform: rotate(175deg);
+          }
+          98% {
+              transform: rotate(185deg);
+          }
+          100% {
+              transform: rotate(180deg);
+          }
+      }
+    </style>
+	</head>
+	<body>
+    <!-- <div class="dial"> -->
+        <!-- <div class="tick tick-bottom"></div> -->
+       <!-- <div class="tick tick-1"></div>
+        <div class="tick tick-2"></div>
+        <div class="tick tick-3"></div>
+        <div class="tick tick-4"></div>
+        <div class="tick tick-5"></div>
+        <div class="tick tick-6"></div>
+        <div class="tick tick-7"></div>
+        <div class="tick tick-8"></div>
+        <div class="tick tick-9"></div>
+        <div class="tick tick-10"></div>
+        <div class="tick tick-11"></div>
+        <div class="tick tick-12"></div> -->
+        <div class="tick hand"></div>
+        <!-- <div class="pivot">
+            <div class="pivot__inner"></div>
+        </div> -->
+    <!-- </div> -->
+	</body>
+</html>
+<script src="https://wow.techbrood.com/libs/jquery/jquery-1.11.1.min.js"></script>
