@@ -1,51 +1,70 @@
 <template>
 	<div id="f">
-		<div class="title">第一个图表为父组件写入</div><br />
-		<div class="echarts-box">
-			<div id="mycharts" ref="mycharts"></div>
-		</div>
-		<div class="edit-box">
-		  <el-table :data="tableData" style="width: 100%">
-			<el-table-column label="日期" width="180">
-				<template slot-scope="scope">
-					<i class="el-icon-time"></i>
-					<span style="margin-left: 10px">{{ scope.row.date }}</span>
-				</template>
-			</el-table-column>
-			<el-table-column label="姓名" width="180">
-				<template slot-scope="scope">
-					<el-popover trigger="hover" placement="top">
-						<p>姓名: {{ scope.row.name }}</p>
-						<p>住址: {{ scope.row.address }}</p>
-						<div slot="reference" class="name-wrapper">
-							<el-tag size="medium">{{ scope.row.name }}</el-tag>
-						</div>
-					</el-popover>
-				</template>
-			</el-table-column>
-			<el-table-column label="操作">
-				<template slot-scope="scope">
-					<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-					<el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-				</template>
-			</el-table-column>
-		</el-table>
-	</div>
-		<!--<Helloworld />-->
+		<el-row>
+	      <el-col :span="3">
+	        <div class="typeList">
+	        	<h1>Drill</h1>
+	        	<!--<h2>Drill</h2>-->
+	        	<div
+	        		v-for="item in typeList"
+	        		:class="{typeItem:true,active:params.objType===item.val}"
+	        		@click="changeType(item.val)"
+	        		>
+	        		{{item.title}}
+	        	</div>
+	        </div>
+	      </el-col>
+	      <el-col :span="21">
+	      	<div>
+	      		<div class="headerBox">
+	      			<span>搜索：</span>
+	      			<el-input class="search-input" size="mini" suffix-icon="el-icon-search" v-model="searchText" @keyup.enter.native="getDataList()" />
+	      			<el-button type="primary" size="mini" @click="visible=true">创建</el-button>
+	      		</div>
+	      	</div>
+	      </el-col>
+	    </el-row>
+	    <el-dialog title="创建" :visible.sync="visible" width="40%" ref="createRuleForm">
+	    	<el-form :model="cFormData" :rule="cRules" lable-width="130px">
+	    		<el-form-item lable="测试" prop>
+	    			
+	    		</el-form-item>
+	    	</el-form>
+	    </el-dialog>
+	    
 	</div>
 </template>
-
-<!-- <script src="shine.js"></script> -->
 <script>
-	
-//	import Helloworld from  '@/components/Helloworld.vue';
 	export default{
 		name:"Drill",
-		components:{
-//			Helloworld
-		},
+		components:{},
 		data(){
 			return {
+				searchText:'',
+				visible:false,
+				params:{
+					id:1,
+					objType:1,
+				},
+				dataList:[],
+				typeList:[
+					{
+						title:'文本',
+						val:1
+					},
+					{
+						title:'图像',
+						val:2
+					},
+					{
+						title:'音乐',
+						val:3
+					},
+					{
+						title:'视频',
+						val:4
+					}
+				],
 		        tableData: [{
 		          date: '2016-05-02',
 		          name: '王小虎',
@@ -66,6 +85,16 @@
 		      }
 		},
 		methods:{
+			changeType(type){
+				this.params.objType=type;
+			},
+			async getDataList(){
+//				const res = await this.$get(url,params);
+//				if(res.state===1){
+////					Message.success('成功')
+//					this.dataList=res.data;
+//				}
+			},
 		      handleEdit(index, row) {
 		        console.log(index, row);
 		      },
@@ -73,84 +102,51 @@
 		        console.log(index, row);
 		      }
 		},
-		mounted(){
-			
-		    // this.$echarts.init(this.$refs.mycharts).setOption(this.data);
-			
-			     let mychart = this.$echarts.init(this.$refs.mycharts);
-			     mychart.showLoading();
-			     setTimeout(function() {
-			      let self = this;
-			      self.data = {     
-			          series : [
-			              {
-			                  name: '访问来源',
-			                  type: 'pie',
-			                  radius: '55%',
-			                  roseType: 'angle',
-			                  backgroundColor: '#2c343c',
-			                  itemStyle: {
-			                  // 阴影的大小
-			                  shadowBlur: 200,
-			                  // 阴影水平方向上的偏移
-			                  shadowOffsetX: 30,
-			                  // 阴影垂直方向上的偏移
-			                  shadowOffsetY: 40,
-			                  emphasis: {shadowBlur: 800,},
-			                  // 阴影颜色
-			                  shadowColor: 'rgba(0, 0, 0, 0.5)',                 
-			                  }, 
-			                  textStyle: {
-			                        color: 'rgba(255, 255, 255, 0.3)'
-			                      },   
-			                  labelLine: {
-			                        lineStyle: {
-			                            color: 'rgba(255, 255, 255, 0.3)'
-			                        }
-			                    }, 
-			                  // 高亮样式。
-			                  emphasis: {
-			                      itemStyle: {
-			                          // 高亮时点的颜色。
-			                          color: 'blue'
-			                      },
-			                      label: {
-			                          show: true,
-			                          // 高亮时标签的文字。
-			                          color: 'black'
-			                      }
-			                  },           
-			                  data:[
-			                      {value:235, name:'视频广告'},
-			                      {value:274, name:'联盟广告'},
-			                      {value:310, name:'邮件营销'},
-			                      {value:335, name:'直接访问'},
-			                      {value:400, name:'搜索引擎'}
-			                  ]
-			              }
-			          ]
-			     }; 
-			     mychart.hideLoading();
-			     mychart.setOption(this.data);
-			    }, 3000);
-			     console.log(this.a);
-			     console.log(this.data); 
-			     
-		},
-		
+		mounted(){},
 	}
 
 </script>
 
-<style scoped="scoped">
+<style scoped="scoped" lang="scss">
 	#f {
 		/*width: 600px;*/
-		height: 1000px;
+		/*height: 1000px;*/
 		/*background-color: skyblue;*/
 		position: relative;
 		/*div{
 			display: block;
 		}*/
+		padding: 20px;
+		.typeList{
+			background-color:gainsboro;
+			padding:5px;
+			/*h2{
+				top: 0;
+				left: 0;
+				margin-bottom: 20px;
+				font-size: 20px;
+				/*color: ;*/
+			/*}*/
+			.typeItem{
+				cursor: pointer;
+				height: 50px;
+				line-height: 50px;
+				border-left: 2px solid #FFFFFF;
+			}
+			.active{
+				color: #2d6dff;
+				border-left: 2px solid #2D6DFF;
+			}
+		}
+		.headerBox{
+			width: 40%;
+    		text-align: left;
+   	 		padding-left: 20px;
+	        .search-input{
+				width: 30%;
+			}
+		}
+		
 	}
 	.title{
 		width: 400px;

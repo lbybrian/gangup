@@ -19,7 +19,7 @@
 			<el-menu router :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
 				
 				<el-submenu index="1">
-					<template slot="title"><span class="menutitle">操作中心</span></template>
+					<template slot="title"><span class="menutitle">Lins</span></template>
 					<el-submenu index="1-1">
 						<template slot="title"><span :style="showColor">类后台系统</span></template>
 						<el-menu-item index="/pay">充值</el-menu-item>
@@ -31,17 +31,17 @@
 				</el-submenu>
 
 				<el-submenu index="2">
-					<template slot="title"><span class="menutitle">线上组件</span></template>
+					<template slot="title"><span class="menutitle">Demo组件</span></template>
 					<el-menu-item index="/about">入驻企业</el-menu-item>
 					<el-menu-item index="/chatroom">消息/聊天室</el-menu-item>
 				</el-submenu>
 
 				<el-submenu index="3">
-					<template slot="title"><span class="menutitle">空组件(待开发)</span></template>
+					<template slot="title"><span class="menutitle">NewMyShit</span></template>
 					<!--<el-submenu index="/drill">-->
 						<!--<template slot="title">训练营</template>-->
 						<el-menu-item index="/player">开黑</el-menu-item>
-						<el-menu-item index="/drill">训练营</el-menu-item>
+						<el-menu-item index="/drill">关系图</el-menu-item>
 						<el-menu-item index="/square">大厅</el-menu-item>
 						<!--<el-menu-item index="">情报自动关联</el-menu-item>
 						<el-menu-item index="">情报评估管理</el-menu-item>
@@ -71,10 +71,21 @@
 		<el-col :span="4" style="height: 100%;">
 			<div class="grid-content bg-purple">
 				<div>
-					<i class="el-icon-user"></i> 欢迎 : {{ username}}&nbsp;&nbsp;
 					<!--<el-avatar shape="circle" :size="40" src="../assets/image/user.png"></el-avatar>-->
+					<i class="el-icon-user"></i> 欢迎 : {{ username}}&nbsp;&nbsp;
 					<el-link href="/login" type="primary">退出</el-link>
+					<el-button @click="changeColor">换肤</el-button>
 				</div>
+				<!--<el-menu  :default-active="activeIndex"  mode="horizontal">
+					<el-submenu>
+						<template slot="title"><span> 欢迎 : {{ username}}</span></template>
+						<el-menu-item >退出登录</el-menu-item>
+						<el-button @click="changeColor">换肤</el-button>
+						<el-menu-item >
+							<div @click="changeColor">换肤</div>
+						</el-menu-item>
+					</el-submenu>
+				</el-menu>-->
 			</div>
 		</el-col>
 
@@ -83,12 +94,12 @@
 <script>
 	export default {
 		name: "Header",
+		props:['changeColor'],
 		data() {
 			return {
 				seen: false,
 				current: 0,
 				activeIndex: '1',
-
 				username: 'admin管理员',
 				activeIndex: '/',
 				showColor: {
@@ -123,7 +134,9 @@
 //			}
 //		},
 		methods: {
-
+//			changeC(){
+//				this.changeColor()
+//			},
 			goHome() {
 				// this.$router.push({
 				//   path: `/label`
