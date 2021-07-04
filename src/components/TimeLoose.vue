@@ -87,8 +87,8 @@
 		},
 		mounted(){
 //			this.setTimes(this.nowTime)
-			console.log(timeNow)
-			console.log(timeNow instanceof Function)
+//			console.log(timeNow)
+//			console.log(timeNow instanceof Function)
 			if(timeNow instanceof Function){
 				setInterval(function(){
 					timeNow(new Date().getTime());

@@ -8,19 +8,34 @@
 	        	<div
 	        		v-for="item in typeList"
 	        		:class="{typeItem:true,active:params.objType===item.val}"
-	        		@click="changeType(item.val)"
+	        		@click="changeType(item)"
 	        		>
 	        		{{item.title}}
 	        	</div>
 	        </div>
 	      </el-col>
 	      <el-col :span="21">
-	      	<div>
+	      	<div class="r">
 	      		<div class="headerBox">
 	      			<span>搜索：</span>
 	      			<el-input class="search-input" size="mini" suffix-icon="el-icon-search" v-model="searchText" @keyup.enter.native="getDataList()" />
 	      			<el-button type="primary" size="mini" @click="visible=true">创建</el-button>
 	      		</div>
+					<!--<img class="csxz" :src="csxz" />-->
+				<div>
+					<el-table :data="tableData">
+					      <el-table-column
+					        prop="name"
+					        label="姓名"
+					        width="180">
+				      	</el-table-column>
+						<el-table-column
+					        prop="address"
+					        label="日期"
+					        width="180">
+					      </el-table-column>
+					</el-table>
+				</div>
 	      	</div>
 	      </el-col>
 	    </el-row>
@@ -33,7 +48,7 @@
 					  :on-preview="handlePreview"
 					  :on-remove="handleRemove"
 					  :before-remove="beforeRemove"
-					  multiple
+					   multiple
 					  :limit="3"
 					  :on-exceed="handleExceed"
 					  :file-list="fileList">
@@ -52,6 +67,7 @@
 		components:{},
 		data(){
 			return {
+				csxz: require("@/assets/imgs/108/35512783_2.jpg"),
 				searchText:'',
 				visible:false,
 				params:{
@@ -81,29 +97,65 @@
 					}
 				],
 		        tableData: [{
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
+		        	id:1,
+		          date: [],
+		          name: '文本',
+		          address: '文本文本上海市普陀区金沙江路 1518 弄'
 		        }, {
-		          date: '2016-05-04',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1517 弄'
+		        	id:2,
+		          date: [],
+		          name: '图像',
+		          address: '图像图像上海市普陀区金沙江路 1517 弄'
 		        }, {
-		          date: '2016-05-01',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1519 弄'
+		        	id:3,
+		          date: [],
+		          name: '音乐',
+		          address: '音乐音乐上海市普陀区金沙江路 1519 弄'
 		        }, {
-		          date: '2016-05-03',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1516 弄'
+		        	id:4,
+		          date: [],
+		          name: '视频',
+		          address: '视频视频上海市普陀区金沙江路 1516 弄'
 		        }]
 		      }
 		},
 		methods:{
-			changeType(type){
-				this.params.objType=type;
+			changeType(item){
+				this.params.objType=item.val;
+				this.searchText=item.title;
+				this.getDataList();
 			},
 			async getDataList(){
+				this.tableData=[{
+		        	id:1,
+		          date: [],
+		          name: '文本',
+		          address: '文本文本上海市普陀区金沙江路 1518 弄'
+		        }, {
+		        	id:2,
+		          date: [],
+		          name: '图像',
+		          address: '图像图像上海市普陀区金沙江路 1517 弄'
+		        }, {
+		        	id:3,
+		          date: [],
+		          name: '音乐',
+		          address: '音乐音乐上海市普陀区金沙江路 1519 弄'
+		        }, {
+		        	id:4,
+		          date: [],
+		          name: '视频',
+		          address: '视频视频上海市普陀区金沙江路 1516 弄'
+		        }];
+				await this.tableData.map(item=>{
+//					console.log(item);
+					if(this.searchText===item.name){
+//						this.tableData=[].push(item)
+						this.tableData=[];
+						this.tableData.push(item);
+					}	
+					console.log(this.tableData);
+				})
 //				const res = await this.$get(url,params);
 //				if(res.state===1){
 ////					Message.success('成功')
@@ -129,8 +181,6 @@
 		      beforeRemove(file, fileList) {
 		        return this.$confirm(`确定移除 ${ file.name }？`);
 		      }
-		      
-		      
 		},
 		mounted(){},
 	}
@@ -138,6 +188,14 @@
 </script>
 
 <style scoped="scoped" lang="scss">
+@keyframes Tm{
+	0%{opacity: 0.1;}
+	20%{opacity: 0.5;}
+	40%{opacity: 0.7;}
+	60%{opacity: 1;}
+	80%{opacity: 0.5;}
+	100%{opacity: 0.1;}
+}
 	#f {
 		/*width: 600px;*/
 		/*height: 1000px;*/
@@ -168,12 +226,20 @@
 				border-left: 2px solid #2D6DFF;
 			}
 		}
-		.headerBox{
-			width: 40%;
-    		text-align: left;
-   	 		padding-left: 20px;
-	        .search-input{
-				width: 30%;
+		.r{
+			
+			.headerBox{
+				width: 40%;
+	    		text-align: left;
+	   	 		padding-left: 20px;
+		        .search-input{
+					width: 30%;
+				}
+			}
+			.csxz{
+				position: absolute;
+				right: 0;
+				animation: Tm 10s linear infinite !important;
 			}
 		}
 		
