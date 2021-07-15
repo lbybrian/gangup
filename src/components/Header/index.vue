@@ -43,6 +43,7 @@
 						<el-menu-item index="/player">开黑</el-menu-item>
 						<el-menu-item index="/drill">关系图</el-menu-item>
 						<el-menu-item index="/square">大厅</el-menu-item>
+						<el-menu-item index="/zlinscs">好梦由来最易醒</el-menu-item>
 						<!--<el-menu-item index="">情报自动关联</el-menu-item>
 						<el-menu-item index="">情报评估管理</el-menu-item>
 						<el-menu-item index="">多手段展示</el-menu-item>-->
@@ -56,15 +57,16 @@
 				</el-submenu>
 
 				<el-submenu index="4">
+					<template slot="title"><span class="menutitle">CHMMWJQ</span></template>
 					<!--<template slot="title"><span class="menutitle">操作中心</span></template>
-					<el-submenu index="4-1">
+						<el-submenu index="4-1">
 						<template slot="title"><span :style="showColor">充值</span></template>
 						<el-menu-item index="/pay">充值</el-menu-item>
 						<el-menu-item index="/appdownload">APP下载</el-menu-item>
 						<el-menu-item index="/login">登录注册</el-menu-item>
-					</el-submenu>
-					<el-menu-item index="">二/三维可视化</el-menu-item>
-					<el-menu-item index="">分析方法可视化</el-menu-item>-->
+					</el-submenu>-->
+					<el-menu-item index="/ab">自古多情空余恨</el-menu-item>
+					<el-menu-item index="/cs">此恨绵绵无绝期</el-menu-item>
 				</el-submenu>
 			</el-menu>
 		</el-col>

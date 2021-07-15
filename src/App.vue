@@ -31,8 +31,9 @@
 //					backgroundImage:"url("+require('../public/static/imgs/bg.jpg')+")",
 //					backgroundSize: "100%,100%",
 //					backgroundRepeat: "round",
-//						backgroundColor:['skyblue','pink','yellow','#2ac9b3','orange','8c2ac9']
-						backgroundColor:['rgba(255,255,255,0%)']
+//						backgroundColor:['#2ac9b3'],
+						backgroundColor:['rgba(255,255,255,0%)'],
+//						backgroundColor:['radial-gradient(#062771 15% #04132b 100%)'],
 				}
 			}
 		},

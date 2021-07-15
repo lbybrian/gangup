@@ -334,7 +334,6 @@
 			opacity: 1;
 		}
 	}
-	
 	@keyframes Runing {
 		0% {
 			margin-left: 0;
@@ -370,7 +369,6 @@
 			margin-left: 0;
 		}
 	}
-	
 	.img-box-w {
 		.el-scrollbar-top {
 			.el-scrollbar__wrap {
@@ -414,7 +412,11 @@
 				height: 377px;
 				animation: lujunyi 10s slinear!important;
 			}*/
-			
+			.btnBox{
+				/*text-align: center;*/
+				position: fixed;
+				left: 18%;
+			}
 			.wh{
 				margin: 5px;
 				/*animation: wh 10s linear infinite !important;*/

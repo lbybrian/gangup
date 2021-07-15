@@ -1,6 +1,9 @@
 export default {
     path : '/zlinscs',
     component : () => import('@/views/Z_lins_cs'),
+    meta:{
+		isShow:true//隐藏header和footer
+	},
     children:[
 //  	{
 //  		path:'rollingimg',

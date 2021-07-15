@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+
+<html> 
+
+<head> 
+
+<title>Untitled Document</title> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"> 
+
+</head> 
+
+<body> 
+
+
+
+<SCRIPT language=javascript>
+
+<!--
+
+window.onload=adddiv;
+
+document.onmousedown=function(e){recordobj(e)};
+
+document.ondblclick=dbclick;
+
+document.onmouseup=function(e){showselect(e)};
+
+var starobj,isdb=false,allow=true;
+
+function isallow(){
+
+	if(allow){
+
+		allow=false;
+
+		alert('is closed');
+
+	}else{
+
+		allow=true;
+
+		alert('is opend');
+
+	}
+
+}
+
+function dbclick(){
+
+	isdb=true;
+
+}
+
+function recordobj(e){
+
+	e = e || window.event;
+
+	starobj = e.srcElement || e.target;
+
+}
+
+function showselect(e){
+
+	e = e || window.event;
+
+	theobj = e.srcElement || e.target;
+
+	var str="[^.]";
+
+	if(theobj.tagName != "A" && theobj.tagName != "INPUT" && theobj == starobj && !isdb && allow) {
+
+		if(document.all){
+
+			var oText = document.selection.createRange();
+
+			if(oText.text.length>0){
+
+				str=oText.text;
+
+				oText.text = oText.text;
+
+			}
+
+			oText.select();
+
+		}else{
+
+			str = document.getSelection();
+
+		}
+
+		theobj.innerHTML = theobj.innerHTML
+
+			.replace(new RegExp(str,"gi"),"<u style='FONT-WEIGHT: bold;COLOR: #ff3366'>" + str + "</u>");
+
+	}
+
+	searchgoogle(str,e);
+
+	isdb=false;
+
+}
+
+function searchgoogle(str,e){
+
+	var obj = document.getElementById("searchgoogle");
+
+	if(str.length>0){
+
+		obj.style.display="block";
+
+		obj.style.position="absolute";
+
+		obj.style.zIndex=999;
+
+		obj.style.top=(document.body || document.documentElement).scrollTop + (e.y || e.pageY) - 25 + "px";
+
+		obj.style.left=(document.body || document.documentElement).scrollLeft + (e.x || e.pageX) + 5 + "px";
+
+		obj.style.widht=80;
+
+		obj.innerHTML = "<a target=_blank href=http://www.google.com/search?ie=UTF-8&oe=UTF -8&q="+str+" style='BORDER-RIGHT: royalblue thin solid; BORDER-TOP: royalblue thin solid; FONT-WEIGHT: bold; BORDER-LEFT: royalblue thin solid; CLIP: rect(auto auto auto auto); COLOR: #ffffff; BORDER-BOTTOM: royalblue thin solid; BACKGROUND-COLOR: inactivecaption; TEXT-DECORATION: none'>Search It！</a>";
+
+	}else if(obj){
+
+		obj.style.display = "none";
+
+	}
+
+}
+
+function adddiv(){
+
+	var mobj = document.createElement("div");
+
+	mobj.id="searchgoogle";
+
+	(document.body || document.documentElement).appendChild(mobj);
+
+}
+
+</SCRIPT>
+
+<INPUT type="button" onclick="isallow()" value="关闭/打开划词功能"> 
+
+<p>qrasfdasfasfdasfsafasdfsafsafasdfasdfasd</p> 
+
+</body> 
+
+</html>
+
+

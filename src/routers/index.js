@@ -11,6 +11,8 @@ import square from "./square";
 import login from "./login";
 import chatroom from "./chatroom";
 import zlinscs from "./zlinscs";
+import ab from "./ab";
+//import cs from "./cs";
 import rollingimg from "./rollingimg";
 //import nav from "./nav";
 
@@ -39,10 +41,25 @@ const router = new VueRouter({
   	chatroom,
   	zlinscs,
   	rollingimg,
+  	ab,
   	{
     path: "/*",
     redirect: "home"
-  },
+	  },
+//	  children:[
+//		  {path : '/ab',
+//		    component : () => import('@/components/AB'),
+//		    meta:{
+//					isShow:true//隐藏header和footer
+//				}
+//	    },
+//			{path : '/cs',
+//		    component : () => import('@/components/CS'),
+//		    meta:{
+//					isShow:true//隐藏header和footer
+//				}
+//	    }
+//	  ]
 //{
 //  path: "/home/*",/无意义
 //  redirect: "home"

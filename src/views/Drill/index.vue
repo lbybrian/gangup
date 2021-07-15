@@ -3,6 +3,7 @@
 		<el-row>
 	      <el-col :span="3">
 	        <div class="typeList">
+	        	
 	        	<h1>Drill</h1>
 	        	<!--<h2>Drill</h2>-->
 	        	<div
@@ -21,24 +22,46 @@
 	      			<el-input class="search-input" size="mini" suffix-icon="el-icon-search" v-model="searchText" @keyup.enter.native="getDataList()" />
 	      			<el-button type="primary" size="mini" @click="visible=true">创建</el-button>
 	      		</div>
+	      		
 					<!--<img class="csxz" :src="csxz" />-->
 				<div>
 					<el-table :data="tableData">
-					      <el-table-column
+				      	<el-table-column
 					        prop="name"
 					        label="姓名"
-					        width="180">
+					        width="80">
 				      	</el-table-column>
 						<el-table-column
 					        prop="address"
-					        label="日期"
-					        width="180">
-					      </el-table-column>
+					        label="地址"
+					        width="280">
+				      	</el-table-column>
+				      	<el-table-column
+					        prop="data"
+					        label="操作"
+					        solt="operation"
+					        width="80">
+					        <template slot-scope="scope">
+					        	<div v-for="item in scope.row.operation">
+									<el-link slot="operation" :underline="false" type='primary' :href="scope.row.newsContent">{{scope.row.operation[0]}}</el-link>
+									<el-popconfirm title="确认删除？" @onConfirm="deleteMode(scope.row.id)">
+									  	<!--<el-button slot="reference" type='danger'>{{scope.row.operation[1]}}</el-button>-->
+										<el-link slot="reference" :underline="false" type='danger'>{{scope.row.operation[1]}}</el-link>
+									</el-popconfirm>
+					        	</div>
+					        </template>
+					        
+				      	</el-table-column>
 					</el-table>
 				</div>
 	      	</div>
 	      </el-col>
 	    </el-row>
+	    
+	    <el-row>
+	    	
+	    </el-row>
+	    
 	    <el-dialog title="创建" :visible.sync="visible" width="40%" ref="createRuleForm">
 	    	<el-form :model="cFormData" :rule="cRules" lable-width="130px">
 	    		<el-form-item lable="测试" prop>
@@ -100,22 +123,27 @@
 		        	id:1,
 		          date: [],
 		          name: '文本',
-		          address: '文本文本上海市普陀区金沙江路 1518 弄'
+		          address: '文本文本上海市普陀区金沙江路 1518 弄',
+		          operation:'详情',
+		          reference:'删除'
 		        }, {
 		        	id:2,
 		          date: [],
 		          name: '图像',
-		          address: '图像图像上海市普陀区金沙江路 1517 弄'
+		          address: '图像图像上海市普陀区金沙江路 1517 弄',
+		          operation:['详情','删除']
 		        }, {
 		        	id:3,
 		          date: [],
 		          name: '音乐',
-		          address: '音乐音乐上海市普陀区金沙江路 1519 弄'
+		          address: '音乐音乐上海市普陀区金沙江路 1519 弄',
+		          operation:['详情','删除']
 		        }, {
 		        	id:4,
 		          date: [],
 		          name: '视频',
-		          address: '视频视频上海市普陀区金沙江路 1516 弄'
+		          address: '视频视频上海市普陀区金沙江路 1516 弄',
+		          operation:['详情','删除']
 		        }]
 		      }
 		},
@@ -154,7 +182,7 @@
 						this.tableData=[];
 						this.tableData.push(item);
 					}	
-					console.log(this.tableData);
+//					console.log(this.tableData);
 				})
 //				const res = await this.$get(url,params);
 //				if(res.state===1){
@@ -162,25 +190,28 @@
 //					this.dataList=res.data;
 //				}
 			},
-		      handleEdit(index, row) {
-		        console.log(index, row);
-		      },
-		      handleDelete(index, row) {
-		        console.log(index, row);
-		      },
-		      //弹窗上传文件相关4个
-		      handleRemove(file, fileList) {
-		        console.log(file, fileList);
-		      },
-		      handlePreview(file) {
-		        console.log(file);
-		      },
-		      handleExceed(files, fileList) {
-		        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
-		      },
-		      beforeRemove(file, fileList) {
-		        return this.$confirm(`确定移除 ${ file.name }？`);
-		      }
+			deleteMode(){
+				
+			},
+			  handleEdit(index, row) {
+			    console.log(index, row);
+			  },
+			  handleDelete(index, row) {
+			    console.log(index, row);
+			  },
+			  //弹窗上传文件相关4个
+			  handleRemove(file, fileList) {
+			    console.log(file, fileList);
+			  },
+			  handlePreview(file) {
+			    console.log(file);
+			  },
+			  handleExceed(files, fileList) {
+			    this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+			  },
+			  beforeRemove(file, fileList) {
+			    return this.$confirm(`确定移除 ${ file.name }？`);
+			  }
 		},
 		mounted(){},
 	}
