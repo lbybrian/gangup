@@ -29,11 +29,11 @@
 								>
 								{{item2}}
 							</el-tag>
-	<el-button v-if="isEdit && item.id=='zt'" class="button-new-tag" size="small" @click="showInput(ztInputVisible,'zt')">{{ztInputVisible?"确定":"+主体"}}</el-button>
-	<el-button v-if="isEdit && item.id=='kt'" class="button-new-tag" size="small" @click="showInput(ktInputVisible,'kt')">{{ktInputVisible?"确定":"+主体"}}</el-button>
-	<el-button v-if="isEdit && item.id=='sj'" class="button-new-tag" size="small" @click="showInput(sjInputVisible,'sj')">{{sjInputVisible?"确定":"+主体"}}</el-button>
-	<el-button v-if="isEdit && item.id=='dz'" class="button-new-tag" size="small" @click="showInput(dzInputVisible,'dz')">{{dzInputVisible?"确定":"+主体"}}</el-button>
 						</span>
+						<el-button v-if="isEdit && item.id=='zt'" class="button-new-tag" size="small" @click="showInput(ztInputVisible,'zt')">{{ztInputVisible?"确定":"+主体"}}</el-button>
+						<el-button v-if="isEdit && item.id=='kt'" class="button-new-tag" size="small" @click="showInput(ktInputVisible,'kt')">{{ktInputVisible?"确定":"+主体"}}</el-button>
+						<el-button v-if="isEdit && item.id=='sj'" class="button-new-tag" size="small" @click="showInput(sjInputVisible,'sj')">{{sjInputVisible?"确定":"+主体"}}</el-button>
+						<el-button v-if="isEdit && item.id=='dz'" class="button-new-tag" size="small" @click="showInput(dzInputVisible,'dz')">{{dzInputVisible?"确定":"+主体"}}</el-button>
 					</el-col>
 				</el-row>
 				<!--<el-input class="input-new-tag" v-if="inputVisible" v-model="inputValue" ref="saveTagInput" size="small" @keyup.enter.native="handleInputConfirm" @blur="handleInputConfirm"></el-input>
