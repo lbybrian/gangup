@@ -52,7 +52,7 @@
 			changeColor(){
 					this.bg.backgroundColor.splice(0,1);
 					if(this.bg.backgroundColor.length<=1){
-						this.bg.backgroundColor=['skyblue','#65c5ec','#0faaea','#29f8a7','#31f829','8c2ac9','pink','#eb87a0','#ee5178','#ecec6f','yellow','orange','#663399','#2ac9b3','white']
+						this.bg.backgroundColor=['#2ac9b3','skyblue','#65c5ec','#0faaea','#29f8a7','#31f829','8c2ac9','pink','#eb87a0','#ee5178','#ecec6f','yellow','orange','#663399','white']
 					}
 					console.log(this.bg.backgroundColor[0],this.bg.backgroundColor.length)
 			}
@@ -67,6 +67,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   overflow-x: hidden;
+  user-select:none;
   /*background-image: url("./assets/bg.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;*/
