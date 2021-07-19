@@ -33,20 +33,20 @@ app.get("/shuihuname",function(req,res){
 	})
 })
 //	//获取本地图片数据1
-//app.get("/getimgslist",function(req,res){
-//	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
-//	//console.log(imageDataToBase64)
-//	fs.readFile(imagePath,function(err,result){
-//		let imageData = fs.readFileSync(imagePath)
-//		let imageDataToBase64 = imageData.toString('base64');// 转成 base64
-////		console.log('KKKKKKKKKKK',result);
-//		res.json({
-//			ok:1,
-//			mes:'success',
-//			imgslist:imageDataToBase64
-//		})
-//	})
-//})
+app.get("/getimgslist",function(req,res){
+	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
+	//console.log(imageDataToBase64)
+	fs.readFile(imagePath,function(err,result){
+		let imageData = fs.readFileSync(imagePath)
+		let imageDataToBase64 = imageData.toString('base64');// 转成 base64
+//		console.log('KKKKKKKKKKK',result);
+		res.json({
+			ok:1,
+			mes:'success',
+			imgslist:imageDataToBase64
+		})
+	})
+})
 	//获取本地图片数据2
 app.get("/getimgslist",function(req,res){
 	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'

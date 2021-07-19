@@ -17,7 +17,7 @@
 						</el-col>
 					</el-row>
 				</el-tab-pane>
-				<el-tab-pane label='花刺' name='2'>
+				<el-tab-pane label='花刺' name='2' style="margin-top: 30px;">
 					<el-row>
 						<el-col :span='12'>
 							<SjLeft :title="title" :dataList='dataList' />

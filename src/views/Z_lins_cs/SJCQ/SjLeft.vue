@@ -72,7 +72,7 @@
 			},
 			resetDataList(numb){
 //				console.log(document.getElementByclassName('sjcqDetail'));
-				console.log(document.getElementsByClassName('sjcqDetail')[0])
+//				console.log(document.getElementsByClassName('sjcqDetail')[0])
 				if(numb){
 					document.getElementsByClassName('sjcqDetail')[0].style.userSelect='text';
 					document.getElementsByClassName('sjcqDetail')[0].style.color='yellow';
@@ -109,7 +109,7 @@
 					margin: 0!important;
 				}*/
 				.btn{
-					margin-bottom: 5px;
+					/*margin-bottom: 5px;*/
 				}
 			}
 		}
