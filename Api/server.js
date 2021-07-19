@@ -52,7 +52,7 @@ app.get("/getwhimg",function(req,res){
 	  srcNewList.push({'videosrc':item})
 	 }
 	})
-		console.log('KKKKKKKKKKK',result);
+//		console.log('KKKKKKKKKKK',result);
 		res.json({
 			ok:1,
 			mes:'success',
