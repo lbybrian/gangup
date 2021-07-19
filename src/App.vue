@@ -52,7 +52,7 @@
 			changeColor(){
 					this.bg.backgroundColor.splice(0,1);
 					if(this.bg.backgroundColor.length<=1){
-						this.bg.backgroundColor=['#2ac9b3','skyblue','#65c5ec','#0faaea','#29f8a7','#31f829','8c2ac9','pink','#eb87a0','#ee5178','#ecec6f','yellow','orange','#663399','white']
+						this.bg.backgroundColor=['#2ac9b3','skyblue','#65c5ec','#2468f2','#0faaea','#27b865','#29f8a7','#31f829','8c2ac9','pink','#eb87a0','#ee5178','#ecec6f','#8b572a','#feb123','orange','#663399','white']
 					}
 					console.log(this.bg.backgroundColor[0],this.bg.backgroundColor.length)
 			}
@@ -79,5 +79,6 @@
 #menu{
 	min-height: 100vh;
 	overflow: hidden;
+	/*margin: 0 20px;*/
 }
 </style>

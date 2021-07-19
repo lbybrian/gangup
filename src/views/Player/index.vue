@@ -25,31 +25,32 @@
 								<el-button @click="ljy=!ljy;">天花板</el-button>
 								<el-button @click="isWH=true;isBB=false;isBJ=false;isSJ=false;isXB=false">马军五虎将</el-button>
 								<el-button @click="isWH=false;isBB=true;isBJ=false;isSJ=false;isXB=false">马军八彪将</el-button>
-								<el-button @click="isWH=false;isBB=false;isBJ=false;isSJ=false;isXB=true">马军小彪将{{}}</el-button>
-								<el-button @click="isWH=false;isBB=false;isBJ=true;isSJ=false;isXB=false">步军{{}}头领</el-button>
-								<el-button @click="isWH=false;isBB=false;isBJ=false;isSJ=true;isXB=false">水军{{}}头领</el-button>
+								<el-button @click="isWH=false;isBB=false;isBJ=false;isSJ=false;isXB=true">马军小彪将{{16}}</el-button>
+								<el-button @click="isWH=false;isBB=false;isBJ=true;isSJ=false;isXB=false">步军{{8}}头领</el-button>
+								<el-button @click="isWH=false;isBB=false;isBJ=false;isSJ=true;isXB=false">水军{{8}}头领</el-button>
+								<el-button @click="isWH=false;isBB=false;isBJ=false;isSJ=false;isXB=false;isNew=!isNew">马军五虎将-新</el-button>
 								<!--<el-button v-for="item in btnRank" @click="getImgsRank">{{item.title}}</el-button>-->
 							</div>
-							<div >
+							<div>
 								<!--<img class="csxz" :src="csxz" v-show="ljy"/>-->
-								<img class="wh" v-for="item in imgsWh" :src="item.url" v-if="isWH"/>
-								<img class="wh" v-for="item in imgsRank" :src="item.url" v-if="isBB"/>
-								<img class="wh" v-for="item in imgsBj" :src="item.url" v-if="isBJ"/>
-								<img class="wh" v-for="item in imgsSj" :src="item.url" v-if="isSJ"/>
-								<img class="wh" v-for="item in imgsMj" :src="item.url" v-if="isXB"/>
+								<img class="wh" v-for="item in imgsWh" :src="item.url" v-if="isWH" />
+								<img class="wh" v-for="item in imgsRank" :src="item.url" v-if="isBB" />
+								<img class="wh" v-for="item in imgsBj" :src="item.url" v-if="isBJ" />
+								<img class="wh" v-for="item in imgsSj" :src="item.url" v-if="isSJ" />
+								<img class="wh" v-for="item in imgsMj" :src="item.url" v-if="isXB" />
+								<img style="width: 282.3px;height: 500px;" v-for="item in newWh" :src="item.url" v-if="isNew" />
 							</div>
 							<ul v-for="item in names[0].casts">
 								<li>{{ item }}</li>
 							</ul>
-							
+
 						</div>
 					</el-scrollbar>
 				</div>
 			</el-col>
 			<el-col :span="6">
 				<div id="" class="rank-box">
-					<img class="csxz" :src="csxz" v-show="ljy"/>
-					测试计算属性：
+					<img class="csxz" :src="csxz" v-show="ljy" /> 测试计算属性：
 					<div>函数方法: {{ currentTime1() }}</div>
 					<div>计算属性: {{ currentTime2 }}</div>
 					<hr />
@@ -63,7 +64,7 @@
 			 <p v-for="ite in names">{{ite}}</p>
 			</div>-->
 		</el-row>
-		</div>
+	</div>
 </template>
 
 <script>
@@ -73,13 +74,15 @@
 		data() {
 			return {
 				loading: false,
-				ljy:true,
-				isWH:false,
-				isBB:false,
-				isBJ:false,
-				isSJ:false,
-				isXB:false,
+				ljy: true,
+				isWH: false,
+				isBB: false,
+				isBJ: false,
+				isSJ: false,
+				isXB: false,
+				isNew: false,
 				csxz: require("@/assets/imgs/108/35512783_2.jpg"),
+				newWh:[],
 				names: [{
 					casts: [],
 					cover_y: 3556,
@@ -96,36 +99,35 @@
 					// 	url:require("@/assets/imgs/108/35512783_2.jpg"),
 					// },
 				],
-				imgsWh:[],
-				imgsRank:[],
-				imgsBj:[],
-				imgsSj:[],
-				imgsMj:[],
-				btnRank:[
-					{
-						title:'天花板',
-						sum:1,
-						list:[]
+				imgsWh: [],
+				imgsRank: [],
+				imgsBj: [],
+				imgsSj: [],
+				imgsMj: [],
+				btnRank: [{
+						title: '天花板',
+						sum: 1,
+						list: []
 					},
 					{
-						title:'马军五虎将',
-						sum:5
+						title: '马军五虎将',
+						sum: 5
 					},
 					{
-						title:'马军八彪将',
-						sum:8
+						title: '马军八彪将',
+						sum: 8
 					},
 					{
-						title:'马军小彪将',
-						sum:16
+						title: '马军小彪将',
+						sum: 16
 					},
 					{
-						title:'步军头领',
-						sum:11
+						title: '步军头领',
+						sum: 11
 					},
 					{
-						title:'水军头领',
-						sum:8
+						title: '水军头领',
+						sum: 8
 					}
 				],
 				brr: [],
@@ -139,9 +141,10 @@
 		created() {
 			this.getNames();
 			this.getImgsList();
+			this.getMjwuj();
 		},
 		mounted() {
-//			this.getImgsRank();
+			//			this.getImgsRank();
 		},
 		components: {},
 		computed: {
@@ -177,38 +180,52 @@
 					}
 				});
 			},
+			getMjwuj(){
+				this.$axios.get("http://127.0.0.1:8090/getwhimg").then((data)=>{
+					if(data.status === 200){
+						let imgsList = data.data.imgslist;
+						
+						imgsList.map((item) => {
+							let zurl = {
+								url: require("@/assets/imgs/mjwhj/" + item.imsrc)
+							};
+							this.newWh.push(zurl);
+						});
+					}
+				})
+			},
 			//马军五虎将//八彪将//。。。
-//			getImgsRank(){
-////				this.getImgsList();
-//				console.log(this.imgsList)
-//				if(this.imgsList.length>0){
-//					this.imgsWh=[];
-//					this.imgsRank=[];
-//					this.imgsBj=[];
-//					this.imgsSj=[];
-//					this.imgsMj=[];
-//					this.imgsList.forEach(item=>{
-//						console.log(item)
-//	//					console.log(item.imsrc.match(/_(\S+?)\./)[1])
-//		            	let zurl = {
-//								url: require("@/assets/imgs/108/" + item.imsrc)
-//						}
-//			            if (item.imsrc.match(/_(\S+?)\./)[1]==5||item.imsrc.match(/_(\S+?)\./)[1]==6||item.imsrc.match(/_(\S+?)\./)[1]==7||item.imsrc.match(/_(\S+?)\./)[1]==8||item.imsrc.match(/_(\S+?)\./)[1]==15) {
-//							this.imgsWh.push(zurl)
-//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==9||item.imsrc.match(/_(\S+?)\./)[1]==12||item.imsrc.match(/_(\S+?)\./)[1]==16||item.imsrc.match(/_(\S+?)\./)[1]==17||item.imsrc.match(/_(\S+?)\./)[1]==18||item.imsrc.match(/_(\S+?)\./)[1]==19||item.imsrc.match(/_(\S+?)\./)[1]==23||item.imsrc.match(/_(\S+?)\./)[1]==24){
-//							this.imgsRank.push(zurl)
-//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==13||item.imsrc.match(/_(\S+?)\./)[1]==14||item.imsrc.match(/_(\S+?)\./)[1]==21||item.imsrc.match(/_(\S+?)\./)[1]==22||item.imsrc.match(/_(\S+?)\./)[1]==25||item.imsrc.match(/_(\S+?)\./)[1]==32||item.imsrc.match(/_(\S+?)\./)[1]==33||item.imsrc.match(/_(\S+?)\./)[1]==36){
-//							this.imgsBj.push(zurl)
-//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==26||item.imsrc.match(/_(\S+?)\./)[1]==27||item.imsrc.match(/_(\S+?)\./)[1]==28||item.imsrc.match(/_(\S+?)\./)[1]==29||item.imsrc.match(/_(\S+?)\./)[1]==30||item.imsrc.match(/_(\S+?)\./)[1]==31||item.imsrc.match(/_(\S+?)\./)[1]==68||item.imsrc.match(/_(\S+?)\./)[1]==69){
-//							this.imgsSj.push(zurl)
-//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==39||item.imsrc.match(/_(\S+?)\./)[1]==40||item.imsrc.match(/_(\S+?)\./)[1]==41||item.imsrc.match(/_(\S+?)\./)[1]==38||item.imsrc.match(/_(\S+?)\./)[1]==44||item.imsrc.match(/_(\S+?)\./)[1]==45||item.imsrc.match(/_(\S+?)\./)[1]==42||item.imsrc.match(/_(\S+?)\./)[1]==43||item.imsrc.match(/_(\S+?)\./)[1]==48||item.imsrc.match(/_(\S+?)\./)[1]==49||item.imsrc.match(/_(\S+?)\./)[1]==67||item.imsrc.match(/_(\S+?)\./)[1]==72||item.imsrc.match(/_(\S+?)\./)[1]==73||item.imsrc.match(/_(\S+?)\./)[1]==50||item.imsrc.match(/_(\S+?)\./)[1]==51||item.imsrc.match(/_(\S+?)\./)[1]==87){
-//							this.imgsMj.push(zurl)
-//			            }
-//						
-//					})
-//				}
-//				console.log(this.imgsWh)
-//			},
+			//			getImgsRank(){
+			////				this.getImgsList();
+			//				console.log(this.imgsList)
+			//				if(this.imgsList.length>0){
+			//					this.imgsWh=[];
+			//					this.imgsRank=[];
+			//					this.imgsBj=[];
+			//					this.imgsSj=[];
+			//					this.imgsMj=[];
+			//					this.imgsList.forEach(item=>{
+			//						console.log(item)
+			//	//					console.log(item.imsrc.match(/_(\S+?)\./)[1])
+			//		            	let zurl = {
+			//								url: require("@/assets/imgs/108/" + item.imsrc)
+			//						}
+			//			            if (item.imsrc.match(/_(\S+?)\./)[1]==5||item.imsrc.match(/_(\S+?)\./)[1]==6||item.imsrc.match(/_(\S+?)\./)[1]==7||item.imsrc.match(/_(\S+?)\./)[1]==8||item.imsrc.match(/_(\S+?)\./)[1]==15) {
+			//							this.imgsWh.push(zurl)
+			//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==9||item.imsrc.match(/_(\S+?)\./)[1]==12||item.imsrc.match(/_(\S+?)\./)[1]==16||item.imsrc.match(/_(\S+?)\./)[1]==17||item.imsrc.match(/_(\S+?)\./)[1]==18||item.imsrc.match(/_(\S+?)\./)[1]==19||item.imsrc.match(/_(\S+?)\./)[1]==23||item.imsrc.match(/_(\S+?)\./)[1]==24){
+			//							this.imgsRank.push(zurl)
+			//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==13||item.imsrc.match(/_(\S+?)\./)[1]==14||item.imsrc.match(/_(\S+?)\./)[1]==21||item.imsrc.match(/_(\S+?)\./)[1]==22||item.imsrc.match(/_(\S+?)\./)[1]==25||item.imsrc.match(/_(\S+?)\./)[1]==32||item.imsrc.match(/_(\S+?)\./)[1]==33||item.imsrc.match(/_(\S+?)\./)[1]==36){
+			//							this.imgsBj.push(zurl)
+			//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==26||item.imsrc.match(/_(\S+?)\./)[1]==27||item.imsrc.match(/_(\S+?)\./)[1]==28||item.imsrc.match(/_(\S+?)\./)[1]==29||item.imsrc.match(/_(\S+?)\./)[1]==30||item.imsrc.match(/_(\S+?)\./)[1]==31||item.imsrc.match(/_(\S+?)\./)[1]==68||item.imsrc.match(/_(\S+?)\./)[1]==69){
+			//							this.imgsSj.push(zurl)
+			//			            }else if(item.imsrc.match(/_(\S+?)\./)[1]==39||item.imsrc.match(/_(\S+?)\./)[1]==40||item.imsrc.match(/_(\S+?)\./)[1]==41||item.imsrc.match(/_(\S+?)\./)[1]==38||item.imsrc.match(/_(\S+?)\./)[1]==44||item.imsrc.match(/_(\S+?)\./)[1]==45||item.imsrc.match(/_(\S+?)\./)[1]==42||item.imsrc.match(/_(\S+?)\./)[1]==43||item.imsrc.match(/_(\S+?)\./)[1]==48||item.imsrc.match(/_(\S+?)\./)[1]==49||item.imsrc.match(/_(\S+?)\./)[1]==67||item.imsrc.match(/_(\S+?)\./)[1]==72||item.imsrc.match(/_(\S+?)\./)[1]==73||item.imsrc.match(/_(\S+?)\./)[1]==50||item.imsrc.match(/_(\S+?)\./)[1]==51||item.imsrc.match(/_(\S+?)\./)[1]==87){
+			//							this.imgsMj.push(zurl)
+			//			            }
+			//						
+			//					})
+			//				}
+			//				console.log(this.imgsWh)
+			//			},
 			//108排序
 			async getImgsList() {
 				this.loading = true;
@@ -239,22 +256,22 @@
 							};
 							this.imgUrls.push(zurl);
 						});
-//			console.log(this.imgsList);
-						this.imgsList.forEach(item=>{
+						//			console.log(this.imgsList);
+						this.imgsList.forEach(item => {
 							let zurl = {
 								url: require("@/assets/imgs/108/" + item.imsrc)
 							};
-							if (item.imsrc.match(/_(\S+?)\./)[1]==5||item.imsrc.match(/_(\S+?)\./)[1]==6||item.imsrc.match(/_(\S+?)\./)[1]==7||item.imsrc.match(/_(\S+?)\./)[1]==8||item.imsrc.match(/_(\S+?)\./)[1]==15) {
+							if(item.imsrc.match(/_(\S+?)\./)[1] == 5 || item.imsrc.match(/_(\S+?)\./)[1] == 6 || item.imsrc.match(/_(\S+?)\./)[1] == 7 || item.imsrc.match(/_(\S+?)\./)[1] == 8 || item.imsrc.match(/_(\S+?)\./)[1] == 15) {
 								this.imgsWh.push(zurl)
-				            }else if(item.imsrc.match(/_(\S+?)\./)[1]==9||item.imsrc.match(/_(\S+?)\./)[1]==12||item.imsrc.match(/_(\S+?)\./)[1]==16||item.imsrc.match(/_(\S+?)\./)[1]==17||item.imsrc.match(/_(\S+?)\./)[1]==18||item.imsrc.match(/_(\S+?)\./)[1]==19||item.imsrc.match(/_(\S+?)\./)[1]==23||item.imsrc.match(/_(\S+?)\./)[1]==24){
+							} else if(item.imsrc.match(/_(\S+?)\./)[1] == 9 || item.imsrc.match(/_(\S+?)\./)[1] == 12 || item.imsrc.match(/_(\S+?)\./)[1] == 16 || item.imsrc.match(/_(\S+?)\./)[1] == 17 || item.imsrc.match(/_(\S+?)\./)[1] == 18 || item.imsrc.match(/_(\S+?)\./)[1] == 19 || item.imsrc.match(/_(\S+?)\./)[1] == 23 || item.imsrc.match(/_(\S+?)\./)[1] == 24) {
 								this.imgsRank.push(zurl)
-				            }else if(item.imsrc.match(/_(\S+?)\./)[1]==13||item.imsrc.match(/_(\S+?)\./)[1]==14||item.imsrc.match(/_(\S+?)\./)[1]==21||item.imsrc.match(/_(\S+?)\./)[1]==22||item.imsrc.match(/_(\S+?)\./)[1]==25||item.imsrc.match(/_(\S+?)\./)[1]==32||item.imsrc.match(/_(\S+?)\./)[1]==33||item.imsrc.match(/_(\S+?)\./)[1]==36){
+							} else if(item.imsrc.match(/_(\S+?)\./)[1] == 13 || item.imsrc.match(/_(\S+?)\./)[1] == 14 || item.imsrc.match(/_(\S+?)\./)[1] == 21 || item.imsrc.match(/_(\S+?)\./)[1] == 22 || item.imsrc.match(/_(\S+?)\./)[1] == 25 || item.imsrc.match(/_(\S+?)\./)[1] == 32 || item.imsrc.match(/_(\S+?)\./)[1] == 33 || item.imsrc.match(/_(\S+?)\./)[1] == 36) {
 								this.imgsBj.push(zurl)
-				            }else if(item.imsrc.match(/_(\S+?)\./)[1]==26||item.imsrc.match(/_(\S+?)\./)[1]==27||item.imsrc.match(/_(\S+?)\./)[1]==28||item.imsrc.match(/_(\S+?)\./)[1]==29||item.imsrc.match(/_(\S+?)\./)[1]==30||item.imsrc.match(/_(\S+?)\./)[1]==31||item.imsrc.match(/_(\S+?)\./)[1]==68||item.imsrc.match(/_(\S+?)\./)[1]==69){
+							} else if(item.imsrc.match(/_(\S+?)\./)[1] == 26 || item.imsrc.match(/_(\S+?)\./)[1] == 27 || item.imsrc.match(/_(\S+?)\./)[1] == 28 || item.imsrc.match(/_(\S+?)\./)[1] == 29 || item.imsrc.match(/_(\S+?)\./)[1] == 30 || item.imsrc.match(/_(\S+?)\./)[1] == 31 || item.imsrc.match(/_(\S+?)\./)[1] == 68 || item.imsrc.match(/_(\S+?)\./)[1] == 69) {
 								this.imgsSj.push(zurl)
-				            }else if(item.imsrc.match(/_(\S+?)\./)[1]==39||item.imsrc.match(/_(\S+?)\./)[1]==40||item.imsrc.match(/_(\S+?)\./)[1]==41||item.imsrc.match(/_(\S+?)\./)[1]==38||item.imsrc.match(/_(\S+?)\./)[1]==44||item.imsrc.match(/_(\S+?)\./)[1]==45||item.imsrc.match(/_(\S+?)\./)[1]==42||item.imsrc.match(/_(\S+?)\./)[1]==43||item.imsrc.match(/_(\S+?)\./)[1]==48||item.imsrc.match(/_(\S+?)\./)[1]==49||item.imsrc.match(/_(\S+?)\./)[1]==67||item.imsrc.match(/_(\S+?)\./)[1]==72||item.imsrc.match(/_(\S+?)\./)[1]==73||item.imsrc.match(/_(\S+?)\./)[1]==50||item.imsrc.match(/_(\S+?)\./)[1]==51||item.imsrc.match(/_(\S+?)\./)[1]==87){
+							} else if(item.imsrc.match(/_(\S+?)\./)[1] == 39 || item.imsrc.match(/_(\S+?)\./)[1] == 40 || item.imsrc.match(/_(\S+?)\./)[1] == 41 || item.imsrc.match(/_(\S+?)\./)[1] == 38 || item.imsrc.match(/_(\S+?)\./)[1] == 44 || item.imsrc.match(/_(\S+?)\./)[1] == 45 || item.imsrc.match(/_(\S+?)\./)[1] == 42 || item.imsrc.match(/_(\S+?)\./)[1] == 43 || item.imsrc.match(/_(\S+?)\./)[1] == 48 || item.imsrc.match(/_(\S+?)\./)[1] == 49 || item.imsrc.match(/_(\S+?)\./)[1] == 67 || item.imsrc.match(/_(\S+?)\./)[1] == 72 || item.imsrc.match(/_(\S+?)\./)[1] == 73 || item.imsrc.match(/_(\S+?)\./)[1] == 50 || item.imsrc.match(/_(\S+?)\./)[1] == 51 || item.imsrc.match(/_(\S+?)\./)[1] == 87) {
 								this.imgsMj.push(zurl)
-				            }
+							}
 						});
 					}
 				});
@@ -299,21 +316,47 @@
 
 <style scoped lang="scss">
 	@keyframes lujunyi {
-		0%{opacity: 0.1;}
-		20%{opacity: 0.5;}
-		40%{opacity: 1;}
-		60%{opacity: 1;}
-		80%{opacity: 0.5;}
-		100%{opacity: 0.1;}
+		0% {
+			opacity: 0.1;
+		}
+		20% {
+			opacity: 0.5;
+		}
+		40% {
+			opacity: 1;
+		}
+		60% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0.5;
+		}
+		100% {
+			opacity: 0.1;
+		}
 	}
-	@keyframes wh{
-		0%{opacity: 0.1;}
-		20%{opacity: 0.5;}
-		40%{opacity: 1;}
-		60%{opacity: 1;}
-		80%{opacity: 0.5;}
-		100%{opacity: 0.1;}
+	
+	@keyframes wh {
+		0% {
+			opacity: 0.1;
+		}
+		20% {
+			opacity: 0.5;
+		}
+		40% {
+			opacity: 1;
+		}
+		60% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0.5;
+		}
+		100% {
+			opacity: 0.1;
+		}
 	}
+	
 	@keyframes turnAround {
 		0% {
 			opacity: 0.5;
@@ -334,6 +377,7 @@
 			opacity: 1;
 		}
 	}
+	
 	@keyframes Runing {
 		0% {
 			margin-left: 0;
@@ -369,6 +413,7 @@
 			margin-left: 0;
 		}
 	}
+	
 	.img-box-w {
 		.el-scrollbar-top {
 			.el-scrollbar__wrap {
@@ -412,12 +457,12 @@
 				height: 377px;
 				animation: lujunyi 10s slinear!important;
 			}*/
-			.btnBox{
+			.btnBox {
 				/*text-align: center;*/
 				position: fixed;
 				left: 18%;
 			}
-			.wh{
+			.wh {
 				margin: 5px;
 				/*animation: wh 10s linear infinite !important;*/
 			}
@@ -428,9 +473,9 @@
 		background-color: yellow;
 		border: 5px solid black;
 		height: 600px;
-		.csxz{
+		.csxz {
 			width: 24%;
-    		height: 100%;
+			height: 100%;
 			position: absolute;
 			right: 6px;
 			animation: lujunyi 20s linear infinite !important;

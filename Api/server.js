@@ -8,6 +8,7 @@ app.use(express.static(path.resolve(__dirname,'../')))//将gangup设为根路径
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 const db = require('./modules/db')
+const imageinfo = require("imageinfo");
 app.all("*",function(req,res,next){
 	res.header("Access-Control-Allow-Origin","*");
 	res.header("Access-Control-Allow-Methods","GET,DELETE,PUT,POST");
@@ -33,28 +34,68 @@ app.get("/shuihuname",function(req,res){
 	})
 })
 //	//获取本地图片数据1
-app.get("/getimgslist",function(req,res){
-	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
+app.get("/getwhimg",function(req,res){
+	let imagePath = __dirname+'../../'+'src/assets/imgs/mjwhj/';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
 	//console.log(imageDataToBase64)
 	fs.readFile(imagePath,function(err,result){
-		let imageData = fs.readFileSync(imagePath)
-		let imageDataToBase64 = imageData.toString('base64');// 转成 base64
-//		console.log('KKKKKKKKKKK',result);
+//		let imageData = fs.readFileSync(imagePath)
+//		let imageDataToBase64 = imageData.toString('base64');// 转成 base64
+//获取文件夹下的所有图片
+	var srclist=getFiles.getImageFiles(__dirname+'../../'+'src/assets/imgs/mjwhj/');
+	var srcNewList=[];
+	//console.log(srclist);
+	srclist.forEach(function (item, index){
+	// console.log(item);
+	 if(item.split(".")[1]=='jpg'){
+	  srcNewList.push({'imsrc':item})
+	 }else{
+	  srcNewList.push({'videosrc':item})
+	 }
+	})
+		console.log('KKKKKKKKKKK',result);
 		res.json({
 			ok:1,
 			mes:'success',
-			imgslist:imageDataToBase64
+			imgslist:srcNewList
 		})
 	})
 })
+
 	//获取本地图片数据2
 app.get("/getimgslist",function(req,res){
-	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
+//	let imagePath = __dirname+'../../'+'/static/imgs/108/35512783_6.jpg';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
+	let imagePath = __dirname+'../../'+'/static/imgs/108/';// imagePath 是图片在本地的路径  如 'D:\img\1.jpg'
 	//console.log(imageDataToBase64)
 	fs.readFile(imagePath,function(err,result){
 //		console.log('KKKKKKKKKKK',result);
+
+	//获取文件夹下的所有图片
+	var srclist=getFiles.getImageFiles(__dirname+'../../'+'static/imgs/108/');
+	var srcNewList=[];
+	//console.log(srclist);
+	srclist.forEach(function (item, index){
+	// console.log(item);
+	 if(item.split(".")[1]=='jpg'){
+	  srcNewList.push({'imsrc':item})
+	 }else{
+	  srcNewList.push({'videosrc':item})
+	 }
+	})
+//console.log(srcNewList)
+		res.json({
+			ok:1,
+			mes:'success',
+			imgslist:srcNewList
+		})
+	})
+})
+
+
+
+
+//	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	//获取项目工程里的图片
-var image = require("imageinfo"); //引用imageinfo模块
+//var image = require("imageinfo"); //引用imageinfo模块
 function readFileList(path, filesList) {
  var files = fs.readdirSync(path);
  files.forEach(function (itm, index) {
@@ -81,53 +122,14 @@ var getFiles = {
  getImageFiles: function (path) {
   var imageList = [];
   this.getFileList(path).forEach((item) => {
-   var ms = image(fs.readFileSync(item.path + item.filename));
+   var ms = imageinfo(fs.readFileSync(item.path + item.filename));
    ms.mimeType && (imageList.push(item.filename))
   });
   return imageList;
  }
 };
-//获取文件夹下的所有图片
-var srclist=getFiles.getImageFiles(__dirname+'../../'+'static/imgs/108/');
-var srcNewList=[];
-//console.log(srclist);
-srclist.forEach(function (item, index){
-// console.log(item);
- if(item.split(".")[1]=='jpg'){
-  srcNewList.push({'imsrc':item})
- }else{
-  srcNewList.push({'videosrc':item})
- }
-})
-//console.log(srcNewList)
-		res.json({
-			ok:1,
-			mes:'success',
-			imgslist:srcNewList
-		})
-	})
-})
-	
-	
-	
-	
-	
 
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //入驻拉勾网接口
 app.get("/lagougou",function(req,res){
 //	request(`https://m.lagou.com/listmore.json?pageNo=2&pageSize=15`,function(err,response,body){
