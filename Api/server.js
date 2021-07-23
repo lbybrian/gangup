@@ -232,6 +232,6 @@ app.put('/change/:id',(req,res)=>{
 
 
 app.listen(8090,function(){
-	console.log('success')
+	console.log('8090服务开启！')
 })
 	
