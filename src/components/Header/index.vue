@@ -1,21 +1,22 @@
 <template>
 	<div class="pubhead">
 
-		<el-col :span="5" style="height: 100%;">
+		<el-col :span="1" style="height: 100%;">
 			<!--<img src="../assets/image/logo.png"/>-->
 			<div>
 				<!--<span class="systemtitle">大数据分析通用工具</span>-->
-				<el-menu :router="false" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+				<el-menu :router="false"  mode="horizontal">
 				<el-menu-item index="1">
 					<router-link to="/" tag="div">
 						<!--<img src="https://res.tuwan.com/templet/play/index/images/yuewanlogo3.png">-->
-						<img src="../../../public/static/imgs/yuewanlogo3.png">
+						<!--<img src="../../../public/static/imgs/yuewanlogo3.png" style="height: 30px;">-->
+						<i class="el-icon-s-platform turn"  />
 					</router-link>
 				</el-menu-item>
 			</el-menu>
 			</div>
 		</el-col>
-		<el-col :span="15" style="height: 100%;">
+		<el-col :span="19" style="height: 100%;">
 			<el-menu router :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
 				
 				<el-submenu index="1">
@@ -43,7 +44,6 @@
 						<el-menu-item index="/player">开黑</el-menu-item>
 						<el-menu-item index="/drill">关系图</el-menu-item>
 						<el-menu-item index="/square">大厅</el-menu-item>
-						<el-menu-item index="/appdownload">好梦由来最易醒</el-menu-item>
 						<!--<el-menu-item index="">情报自动关联</el-menu-item>
 						<el-menu-item index="">情报评估管理</el-menu-item>
 						<el-menu-item index="">多手段展示</el-menu-item>-->
@@ -113,11 +113,13 @@
 		watch: {
 			$route: {
 				handler(newValue, oldValue) {
-					// console.log(typeof newValue.path)
-					if(newValue.path === '/visual/dwvisual' || newValue.path === '/visual/analyze') {
+					 console.log('``````````Router```````````',newValue.path)
+//					if(newValue.path === '/home'||newValue.path === '/drill' || newValue.path === '/zlinscs' || '/rollingimg') {
+					if(newValue.path === '/drill' || newValue.path === '/zlinscs' || '/rollingimg') {
 						this.showColor.color = ''
 					} else {
 						this.showColor.color = '#409eff'
+						console.log('`````````````Color：',this.showColor.color,'```````````````')
 					}
 				},
 				deep: true,
@@ -178,6 +180,17 @@
 	}
 </script>
 <style scoped>
+	@keyframes turnAround {
+		0% {
+			-webkit-transform:rotate(0deg)
+		}
+		50%{
+			-webkit-transform:rotate(180deg)
+		}
+		100% {
+			-webkit-transform:rotate(360deg)
+		}
+	}
 	.pubhead {
 		height: 79px !important;
 		line-height: 79px;
@@ -202,7 +215,9 @@
 	/* .menutitle {
   color: #ffffff;
 } */
-	
+	.turn{
+		animation: turnAround 1s infinite ;
+	}
 	.menutitle:hover {
 		color: #409EFF !important;
 	}
