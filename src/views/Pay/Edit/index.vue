@@ -21,6 +21,28 @@
 						</el-popover>
 					</template>
 				</el-table-column>
+				
+				<!--<el-table-column label="任务名称" width="180">
+					<template slot-scope="scope">
+						<el-select
+							v-model="scope.row.rwmc"	
+							multiple
+    filterable
+    remote
+    reserve-keyword
+    placeholder="请输入关键词"
+    :remote-method="remoteMethod"
+    multiple
+    allow-create
+    default-first-option
+						>
+							<el-option>
+								
+							</el-option>
+						</el-select>
+					</template>
+				</el-table-column>-->
+				
 				<el-table-column label="操作">
 					<template slot-scope="scope">
 						<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
@@ -50,6 +72,9 @@
       	dbname:'csdbs',
       	jhname:'users',
       	userlist:[],
+      	options: [],
+      	list: [],
+      	loading: false,
       	dblist:[{
       		time:'113141413',
       		content:'是撒',
@@ -86,6 +111,20 @@
 			this.dblist = data.dataList;
     		console.log()
     	},
+    	remoteMethod(query) {
+        if (query !== '') {
+          this.loading = true;
+          setTimeout(() => {
+            this.loading = false;
+            this.options = this.list.filter(item => {
+              return item.label.toLowerCase()
+                .indexOf(query.toLowerCase()) > -1;
+            });
+          }, 200);
+        } else {
+          this.options = [];
+        }
+      },
     	getDbMapUser(){
     		
     	},

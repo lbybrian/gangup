@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<hehe />
 		<router-view></router-view>
 		<!--ABBBBBB-->
 		<div>{{d}}、{{time}}</div>
@@ -20,7 +21,7 @@
 		       <el-button @click="addtooltip(item)" v-show='!isShow'>查看地址信息</el-button>
 		       <el-button @click="reset(item)" v-show='isShow' >取消</el-button>
 		       <el-button @click="addInfo" v-if="!isEdit">添加人物</el-button>
-		       <el-button @click="this.isEdit=false" v-if="isEdit">完成</el-button>
+		       <el-button @click="this.isEdit=false" v-else="isEdit">完成</el-button>
 		     </div>
 		       <el-row style="width: 20%;margin:2% 0 0 40%;" v-for="item in infos.others">
 		       	<el-col :span="17">

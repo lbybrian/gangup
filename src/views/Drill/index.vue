@@ -1,6 +1,7 @@
 <template>
 	<div id="f">
-		<el-row>
+		<el-button @click = "doSha=!doSha">切换组件</el-button>
+		<el-row v-if="doSha">
 	      <el-col :span="3">
 	        <div class="typeList">
 	        	
@@ -58,8 +59,33 @@
 	      </el-col>
 	    </el-row>
 	    
-	    <el-row>
-	    	
+	    <el-row v-else>
+	    	<el-table :data="dataList">
+	    		<el-table-column label="序号" width="180"></el-table-column>
+	    		<el-table-column label="名称" width="180"></el-table-column>
+	    		
+	    		<el-table-column label="任务名称" width="180">
+					<template slot-scope="scope">
+						<el-select
+							v-model="scope.row.rwmc"	
+							multiple
+						    filterable
+						    remote
+						    reserve-keyword
+						    placeholder="请输入关键词"
+						    :remote-method="remoteMethod"
+						    multiple
+						    allow-create
+						    default-first-option
+						>
+							<el-option>
+								
+							</el-option>
+						</el-select>
+					</template>
+				</el-table-column>
+	    		<el-table-column label="大小" width="180"></el-table-column>
+	    	</el-table>
 	    </el-row>
 	    
 	    <el-dialog title="创建" :visible.sync="visible" width="40%" ref="createRuleForm">
@@ -90,6 +116,7 @@
 		components:{},
 		data(){
 			return {
+				doSha:false,
 				csxz: require("@/assets/imgs/108/35512783_2.jpg"),
 				searchText:'',
 				visible:false,

@@ -92,6 +92,7 @@
 			if(timeNow instanceof Function){
 				setInterval(function(){
 					timeNow(new Date().getTime());
+//					console.log('$11111111',timeNow(new Date().getTime()))
 				},1000)
 			}
 

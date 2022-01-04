@@ -44,10 +44,10 @@ var getTimeFromDate = function(date) {
 	var year = null,
 		month = null,
 		day = null;
-	year = date.getFullYear();
+	year = JSON.stringify(date.getFullYear());
 	month = (date.getMonth() + 1) < 10 ? ('0' + (date.getMonth() + 1)) : (date.getMonth() + 1);
 	day = date.getDate() < 10 ? ('0' + date.getDate()) : date.getDate();
-	//		console.log(year + month + day + date.toTimeString().slice(0,8).split(":").join(""))
+//			console.log(year,year + month + day + date.toTimeString().slice(0,8).split(":").join(""))
 	return(year + month + day + date.toTimeString().slice(0, 8).split(":").join(""));
 };
 
@@ -56,7 +56,6 @@ function timeNow(newTime) {
 	var nowTimeStr = getTimeFromDate(new Date(newTime - 1000));
 	var nextTimeStr = getTimeFromDate(new Date(newTime));
 	//		console.log('now',nowTimeStr,'next',nextTimeStr)
-
 	//		var front = document.querySelector(".front");
 	//		front.innerHTML=nowTimeStr;
 
