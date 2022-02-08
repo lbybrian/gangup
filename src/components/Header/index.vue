@@ -1,84 +1,84 @@
 <template>
-	<div class="pubhead">
+  <div class="pubhead">
 
-		<el-col :span="1" style="height: 100%;">
-			<!--<img src="../assets/image/logo.png"/>-->
-			<div>
-				<!--<span class="systemtitle">大数据分析通用工具</span>-->
-				<el-menu :router="false" mode="horizontal">
-					<el-menu-item index="1">
-						<router-link to="/" tag="div">
-							<!--<img src="https://res.tuwan.com/templet/play/index/images/yuewanlogo3.png">-->
-							<!--<img src="../../../public/static/imgs/yuewanlogo3.png" style="height: 30px;">-->
-							<i class="el-icon-s-platform turn" />
-						</router-link>
-					</el-menu-item>
-				</el-menu>
-			</div>
-		</el-col>
-		<el-col :span="19" style="height: 100%;">
-			<el-menu router :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <el-col :span="1" style="height: 100%;">
+      <!--<img src="../assets/image/logo.png"/>-->
+      <div>
+        <!--<span class="systemtitle">大数据分析通用工具</span>-->
+        <el-menu :router="false" mode="horizontal">
+          <el-menu-item index="1">
+            <router-link to="/" tag="div">
+              <!--<img src="https://res.tuwan.com/templet/play/index/images/yuewanlogo3.png">-->
+              <!--<img src="../../../public/static/imgs/yuewanlogo3.png" style="height: 30px;">-->
+              <i class="el-icon-s-platform turn" />
+            </router-link>
+          </el-menu-item>
+        </el-menu>
+      </div>
+    </el-col>
+    <el-col :span="19" style="height: 100%;">
+      <el-menu router :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
 
-				<el-submenu index="1">
-					<template slot="title"><span class="menutitle">Lins</span></template>
-					<el-submenu index="1-1">
-						<template slot="title"><span :style="showColor">类后台系统</span></template>
-						<el-menu-item index="/pay">充值</el-menu-item>
-						<el-menu-item index="/appdownload">APP下载</el-menu-item>
-						<el-menu-item index="/login">登录注册</el-menu-item>
-					</el-submenu>
-					<el-menu-item index="/zlinscs">测试组件</el-menu-item>
-					<el-menu-item index="/rollingimg">轮播</el-menu-item>
-				</el-submenu>
+        <el-submenu index="1">
+          <template slot="title"><span class="menutitle">Lins</span></template>
+          <el-submenu index="1-1">
+            <template slot="title"><span :style="showColor">类后台系统</span></template>
+            <el-menu-item index="/pay">充值</el-menu-item>
+            <el-menu-item index="/appdownload">APP下载</el-menu-item>
+            <el-menu-item index="/login">登录注册</el-menu-item>
+          </el-submenu>
+          <el-menu-item index="/zlinscs">测试组件</el-menu-item>
+          <el-menu-item index="/rollingimg">轮播</el-menu-item>
+        </el-submenu>
 
-				<el-submenu index="2">
-					<template slot="title"><span class="menutitle">Demo</span></template>
-					<el-menu-item index="/about">入驻企业</el-menu-item>
-					<el-menu-item index="/chatroom">消息/聊天室</el-menu-item>
-				</el-submenu>
+        <el-submenu index="2">
+          <template slot="title"><span class="menutitle">Demo</span></template>
+          <el-menu-item index="/about">入驻企业</el-menu-item>
+          <el-menu-item index="/chatroom">消息/聊天室</el-menu-item>
+        </el-submenu>
 
-				<el-submenu index="3">
-					<template slot="title"><span class="menutitle">NewMyShit</span></template>
-					<!--<el-submenu index="/drill">-->
-					<!--<template slot="title">训练营</template>-->
-					<el-menu-item index="/player">开黑</el-menu-item>
-					<el-menu-item index="/drill">关系图</el-menu-item>
-					<el-menu-item index="/square">大厅</el-menu-item>
-					<!--<el-menu-item index="">情报自动关联</el-menu-item>
+        <el-submenu index="3">
+          <template slot="title"><span class="menutitle">NewMyShit</span></template>
+          <!--<el-submenu index="/drill">-->
+          <!--<template slot="title">训练营</template>-->
+          <el-menu-item index="/player">开黑</el-menu-item>
+          <el-menu-item index="/drill">关系图</el-menu-item>
+          <el-menu-item index="/square">大厅</el-menu-item>
+          <!--<el-menu-item index="">情报自动关联</el-menu-item>
 						<el-menu-item index="">情报评估管理</el-menu-item>
 						<el-menu-item index="">多手段展示</el-menu-item>-->
-					<!--</el-submenu>-->
-					<!--<el-submenu index="/about">-->
-					<!--<template slot="title">入驻</template>-->
+          <!--</el-submenu>-->
+          <!--<el-submenu index="/about">-->
+          <!--<template slot="title">入驻</template>-->
 
-					<!--<el-menu-item index="">情报印证对比</el-menu-item>
+          <!--<el-menu-item index="">情报印证对比</el-menu-item>
 						<el-menu-item index="">情报整合去重</el-menu-item>-->
-					<!--</el-submenu>-->
-				</el-submenu>
+          <!--</el-submenu>-->
+        </el-submenu>
 
-				<el-submenu index="4">
-					<template slot="title"><span class="menutitle">CHMMWJQ</span></template>
-					<!--<template slot="title"><span class="menutitle">操作中心</span></template>
+        <el-submenu index="4">
+          <template slot="title"><span class="menutitle">CHMMWJQ</span></template>
+          <!--<template slot="title"><span class="menutitle">操作中心</span></template>
 						<el-submenu index="4-1">
 						<template slot="title"><span :style="showColor">充值</span></template>
 						<el-menu-item index="/pay">充值</el-menu-item>
 						<el-menu-item index="/appdownload">APP下载</el-menu-item>
 						<el-menu-item index="/login">登录注册</el-menu-item>
 					</el-submenu>-->
-					<el-menu-item index="/ab">自古多情空余恨</el-menu-item>
-					<el-menu-item index="/ab/cs">此恨绵绵无绝期</el-menu-item>
-				</el-submenu>
-			</el-menu>
-		</el-col>
-		<el-col :span="4" style="height: 100%;">
-			<div class="grid-content bg-purple">
-				<div>
-					<!--<el-avatar shape="circle" :size="40" src="../assets/image/user.png"></el-avatar>-->
-					<i class="el-icon-user"></i> 欢迎 : {{ username}}&nbsp;&nbsp;
-					<el-link href="/login" type="primary">退出</el-link>
-					<el-button @click="changeColor">换肤</el-button>
-				</div>
-				<!--<el-menu  :default-active="activeIndex"  mode="horizontal">
+          <el-menu-item index="/ab">多情自古空余恨</el-menu-item>
+          <el-menu-item index="/ab/cs">此恨绵绵无绝期</el-menu-item>
+        </el-submenu>
+      </el-menu>
+    </el-col>
+    <el-col :span="4" style="height: 100%;">
+      <div class="grid-content bg-purple">
+        <div>
+          <!--<el-avatar shape="circle" :size="40" src="../assets/image/user.png"></el-avatar>-->
+          <i class="el-icon-user"></i> 欢迎 : {{ username}}&nbsp;&nbsp;
+          <el-link href="/login" type="primary">退出</el-link>
+          <el-button @click="changeColor">换肤</el-button>
+        </div>
+        <!--<el-menu  :default-active="activeIndex"  mode="horizontal">
 					<el-submenu>
 						<template slot="title"><span> 欢迎 : {{ username}}</span></template>
 						<el-menu-item >退出登录</el-menu-item>
@@ -88,10 +88,10 @@
 						</el-menu-item>
 					</el-submenu>
 				</el-menu>-->
-			</div>
-		</el-col>
+      </div>
+    </el-col>
 
-	</div>
+  </div>
 </template>
 <script>
 export default {
