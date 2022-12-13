@@ -15,7 +15,7 @@
     "echarts": "^5.1.1",
     "echarts-gl": "^2.0.5",
     "element-ui": "^2.13.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "imageinfo": "^1.0.4",
     "jquery": "^3.5.1",
     "layui-src": "^2.5.5",
